@@ -41,7 +41,7 @@
 	<configuration>
 	  <archive>
 	    <manifest>
-	      <mainClass>fil.coo.App</mainClass>
+	      <mainClass>adventure.Main</mainClass>
 	    </manifest>
 	  </archive>
 	</configuration>
