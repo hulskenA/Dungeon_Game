@@ -9,7 +9,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		AdventureGame aG = new AdventureGame(Room.generateMap());
 		aG.toString();
-		System.out.println("Coucou");
+		System.out.println("Bonjour");
 	}
 
 }
