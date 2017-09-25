@@ -1,4 +1,4 @@
-package adventure.places.directions;
+package fil.coo.adventure.places.directions;
 
 import java.util.Random;
 
@@ -10,12 +10,12 @@ public enum Direction {
 	
 	private String name;
 	
-	Direction(String name) {
+	private Direction(String name) {
 		this.name = name;
 	}
 	
 	public String toString() {
-		return this.name();
+		return this.name;
 	}
 	
 	public static Direction alea() {

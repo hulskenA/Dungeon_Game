@@ -1,6 +1,6 @@
-package adventure.entities.actions;
+package fil.coo.adventure.entities.actions;
 
-import adventure.places.Room;
+import fil.coo.adventure.places.Room;
 
 public interface Actions {
 	public boolean isPossible(Room r);

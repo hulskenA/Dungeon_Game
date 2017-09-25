@@ -1,4 +1,4 @@
-package adventure.places;
+package fil.coo.adventure.places;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import adventure.entities.GameCharacters;
-import adventure.entities.Monster;
-import adventure.entities.items.Item;
-import adventure.places.directions.Direction;
+import fil.coo.adventure.entities.GameCharacters;
+import fil.coo.adventure.entities.monsters.Monster;
+import fil.coo.adventure.entities.items.Item;
+import fil.coo.adventure.places.directions.Direction;
 
 public class Room {
 	protected List<Monster> monsters;
@@ -71,11 +71,11 @@ public class Room {
 	public static Room generateMap() {
 		Room room = new Room();
 		Room tmp = new Room();
-		room.addNeighbour(adventure.places.directions.Direction.W, tmp);
-		tmp.addNeighbour(adventure.places.directions.Direction.E, room);
+		room.addNeighbour(Direction.W, tmp);
+		tmp.addNeighbour(Direction.E, room);
 		tmp = new Exit();
-		tmp.addNeighbour(adventure.places.directions.Direction.S, room);
-		room.addNeighbour(adventure.places.directions.Direction.N, tmp);
+		tmp.addNeighbour(Direction.S, room);
+		room.addNeighbour(Direction.N, tmp);
 		return room;
 		/*creer algo generation aleatoire de map*/
 	}

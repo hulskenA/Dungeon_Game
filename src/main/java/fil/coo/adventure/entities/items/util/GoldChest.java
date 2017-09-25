@@ -1,6 +1,7 @@
-package adventure.entities.items;
+package fil.coo.adventure.entities.items.util;
 
-import adventure.entities.Player;
+import fil.coo.adventure.entities.items.Item;
+import fil.coo.adventure.entities.Player;
 
 public class GoldChest extends Item {
 

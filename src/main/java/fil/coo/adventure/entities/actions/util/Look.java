@@ -1,6 +1,6 @@
-package adventure.entities.actions;
+package fil.coo.adventure.entities.actions.util;
 
-import adventure.places.Room;
+import fil.coo.adventure.places.Room;
 
 public class Look {
 	public boolean isPossible(Room r) {

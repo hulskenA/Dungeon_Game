@@ -1,4 +1,4 @@
-package adventure.entities;
+package fil.coo.adventure.entities;
 
 public abstract class GameCharacters {
 	protected int LifePoints;

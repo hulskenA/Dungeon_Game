@@ -1,9 +1,10 @@
-package adventure;
+package fil.coo.adventure;
 
-import adventure.entities.*;
-import adventure.entities.items.Item;
-import adventure.places.Room;
-import adventure.places.directions.Direction;
+import fil.coo.adventure.entities.*;
+import fil.coo.adventure.entities.items.Item;
+import fil.coo.adventure.places.*;
+import fil.coo.adventure.places.directions.*;
+import fil.coo.adventure.entities.monsters.*;
 
 public class AdventureGame {
 	private Room currentRoom;

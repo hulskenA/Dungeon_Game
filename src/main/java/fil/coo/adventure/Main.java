@@ -1,7 +1,7 @@
-package adventure;
+package fil.coo.adventure;
 
-import adventure.AdventureGame;
-import adventure.places.Room;
+import fil.coo.adventure.AdventureGame;
+import fil.coo.adventure.places.Room;
 
 public class Main {
 

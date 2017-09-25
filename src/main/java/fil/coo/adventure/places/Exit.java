@@ -1,6 +1,6 @@
-package adventure.places;
+package fil.coo.adventure.places;
 
-import adventure.entities.monsters.Dragon;
+import fil.coo.adventure.entities.monsters.util.*;
 
 public class Exit extends Room {
 	public Exit() {

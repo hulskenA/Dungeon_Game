@@ -1,6 +1,6 @@
-package adventure.entities.monsters;
+package fil.coo.adventure.entities.monsters.util;
 
-import adventure.entities.Monster;
+import fil.coo.adventure.entities.monsters.Monster;
 
 public class Kraken extends Monster {
 	public Kraken() {

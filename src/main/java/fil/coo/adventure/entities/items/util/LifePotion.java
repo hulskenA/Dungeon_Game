@@ -1,6 +1,7 @@
-package adventure.entities.items;
+package fil.coo.adventure.entities.items.util;
 
-import adventure.entities.Player;
+import fil.coo.adventure.entities.Player;
+import fil.coo.adventure.entities.items.Item;
 
 public class LifePotion extends Item {
 

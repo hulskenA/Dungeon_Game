@@ -1,6 +1,6 @@
-package adventure.entities.items;
+package fil.coo.adventure.entities.items;
 
-import adventure.entities.Player;
+import fil.coo.adventure.entities.Player;
 
 public abstract class Item {
 	public abstract void isUsedBy(Player player);
