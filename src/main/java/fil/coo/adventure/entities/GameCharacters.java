@@ -1,6 +1,6 @@
 package fil.coo.adventure.entities;
 
-public abstract class GameCharacters {
+public class GameCharacters {
 	protected int LifePoints;
 	protected int strength;
 	protected int gold;
@@ -31,6 +31,10 @@ public abstract class GameCharacters {
 	
 	public void addGold(int g) {
 		this.gold += g;
+	}
+	
+	public boolean isAlive() {
+		return this.getLifePoints() == 0;
 	}
 	
 	public void LooseLife(int st) {

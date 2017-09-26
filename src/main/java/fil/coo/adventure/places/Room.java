@@ -7,20 +7,20 @@ import java.util.Map;
 import java.util.Set;
 
 import fil.coo.adventure.entities.GameCharacters;
-import fil.coo.adventure.entities.monsters.Monster;
 import fil.coo.adventure.entities.items.Item;
-import fil.coo.adventure.places.directions.Direction;
+import fil.coo.adventure.entities.monsters.Monster;
+import fil.coo.adventure.places.Direction;
 
 public class Room {
 	protected List<Monster> monsters;
-	protected List<GameCharacters> deads;
+	protected List<Monster> deads;
 	protected List<Item> items;
 	protected Map<Direction, Room> neighbour;
 	
 	public Room() {
 		this.monsters = new ArrayList<Monster>();
 		this.items = new ArrayList<Item>();
-		this.deads = new ArrayList<GameCharacters>();
+		this.deads = new ArrayList<Monster>();
 		this.neighbour = new HashMap<Direction, Room>();
 	}
 
@@ -36,7 +36,7 @@ public class Room {
 		return this.monsters;
 	}
 	
-	public void addDead(GameCharacters dead) {
+	public void addDead(Monster dead) {
 		this.deads.add(dead);
 	}
 	
@@ -44,7 +44,7 @@ public class Room {
 		this.deads.remove(dead);
 	}
 	
-	public List<GameCharacters> getDeads() {
+	public List<Monster> getDeads() {
 		return this.deads;
 	}
 
@@ -77,7 +77,6 @@ public class Room {
 		tmp.addNeighbour(Direction.S, room);
 		room.addNeighbour(Direction.N, tmp);
 		return room;
-		/*creer algo generation aleatoire de map*/
 	}
 	
 	public Set<Direction> getPossibleDirections() {
@@ -89,6 +88,6 @@ public class Room {
 	}
 	
 	public String toString() {
-		return new String();
+		return "You are in a normal dungeon room, it is dark...";
 	}
 }

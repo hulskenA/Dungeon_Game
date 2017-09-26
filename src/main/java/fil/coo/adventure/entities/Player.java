@@ -1,7 +1,24 @@
 package fil.coo.adventure.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import fil.coo.adventure.entities.actions.Action;
+
 public class Player extends GameCharacters {
-	public Player() {
-		super(100, 10);
+	
+	private List<Action> playerCapabilities;
+
+	public Player(int lp, int sp) {
+		super(lp,sp);
+		this.playerCapabilities = new ArrayList<Action>();
+	}
+
+	public void addCapability (Action a) {
+		this.playerCapabilities.add(a);
+	}
+	
+	public List<Action> canDo() {
+		return this.playerCapabilities;
 	}
 }

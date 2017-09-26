@@ -1,4 +1,4 @@
-package fil.coo.adventure.places.directions;
+package fil.coo.adventure.places;
 
 import java.util.Random;
 
