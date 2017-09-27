@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.actions.util;
 
+import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.actions.Action;
 import fil.coo.adventure.places.Room;
@@ -8,11 +9,13 @@ import fil.coo.adventure.places.Room;
 public class LootAction implements Action  {
 
 	public boolean canBeDoneIn(Room r) {
-		return false;
+		return !r.getDeads().isEmpty();
 	}
 
 	public void doneByIn(Player p, Room r) {
-		//To be defined
+		for (GameCharacters gc : r.getDeads())
+			p.addGold(gc.getGold());
+		r.getDeads().removeAll(r.getDeads());
 	}
 
 	public String toString() {

@@ -21,4 +21,8 @@ public class Player extends GameCharacters {
 	public List<Action> canDo() {
 		return this.playerCapabilities;
 	}
+	
+	public void die() {
+		System.out.println("You are dead....");
+	}
 }

@@ -11,6 +11,11 @@ public class Monster extends GameCharacters {
 		this.gold = r.nextInt();
 	}
 	
+	public void die() {
+		this.currentRoom().removeCharacter(this);
+		this.currentRoom().addDead(this);
+	}
+	
 	public String toString() {
 		return "Monster : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
 	}

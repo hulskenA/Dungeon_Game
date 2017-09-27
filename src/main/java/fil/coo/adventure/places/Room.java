@@ -12,40 +12,41 @@ import fil.coo.adventure.entities.monsters.Monster;
 import fil.coo.adventure.places.Direction;
 
 public class Room {
-	protected List<Monster> monsters;
-	protected List<Monster> deads;
+	protected List<GameCharacters> characters;
+	protected List<GameCharacters> deadCharacters;
 	protected List<Item> items;
 	protected Map<Direction, Room> neighbour;
 	
 	public Room() {
-		this.monsters = new ArrayList<Monster>();
+		this.characters = new ArrayList<GameCharacters>();
 		this.items = new ArrayList<Item>();
-		this.deads = new ArrayList<Monster>();
+		this.deadCharacters = new ArrayList<GameCharacters>();
 		this.neighbour = new HashMap<Direction, Room>();
 	}
 
-	public void addMonster(Monster monster) {
-		this.monsters.add(monster);
+	public void addCharacter(GameCharacters c) {
+		this.characters.add(c);
+		c.moveTo(this);
 	}
 	
-	public void removeMonster(Monster monster) {
-		this.monsters.remove(monster);
+	public void removeCharacter(GameCharacters c) {
+		this.characters.remove(c);
 	}
 	
-	public List<Monster> getMonsters() {
-		return this.monsters;
+	public List<GameCharacters> getCharacters() {
+		return this.characters;
 	}
 	
-	public void addDead(Monster dead) {
-		this.deads.add(dead);
+	public void addDead(GameCharacters dead) {
+		this.deadCharacters.add(dead);
 	}
 	
 	public void removeDead(GameCharacters dead) {
-		this.deads.remove(dead);
+		this.deadCharacters.remove(dead);
 	}
 	
-	public List<Monster> getDeads() {
-		return this.deads;
+	public List<GameCharacters> getDeads() {
+		return this.deadCharacters;
 	}
 
 	public void addItem(Item item) {
@@ -71,6 +72,7 @@ public class Room {
 	public static Room generateMap() {
 		Room room = new Room();
 		Room tmp = new Room();
+		room.addCharacter(new Monster(5,3));
 		room.addNeighbour(Direction.W, tmp);
 		tmp.addNeighbour(Direction.E, room);
 		tmp = new Exit();

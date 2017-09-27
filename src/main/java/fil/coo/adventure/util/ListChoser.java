@@ -13,10 +13,9 @@ public class ListChoser {
 	 * @param items The items from which the user will have to chose
 	 * @return The chosen option
 	 */
-	public static<T> T chose(String msg, List<T> items,boolean allowNone) {
+	public static<T> T chose(String msg, List<T> items) {
 		int cpt = 1;
-		if (allowNone)
-			System.out.println("Go back (0)");
+		System.out.println("Do nothing (0)");
 		for (T item : items) { 	 
 			System.out.println(item+" ("+cpt+")"); 	    cpt++; 	} 
 		System.out.println(msg); 

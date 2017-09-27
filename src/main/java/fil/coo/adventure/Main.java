@@ -13,9 +13,9 @@ public class Main {
 		thePlayer.addCapability(new LookAction());
 		thePlayer.addCapability(new MoveAction());
 		thePlayer.addCapability(new UseAction());
+		thePlayer.addCapability(new LootAction());
 		AdventureGame aG = new AdventureGame(Room.generateMap(),thePlayer);
 		aG.play();
-		System.out.println("Under construction");
 	}
 
 }

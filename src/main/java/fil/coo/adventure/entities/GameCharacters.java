@@ -1,6 +1,10 @@
 package fil.coo.adventure.entities;
 
-public class GameCharacters {
+import fil.coo.adventure.places.Room;
+
+public abstract class GameCharacters {
+	
+	protected Room currentRoom;
 	protected int LifePoints;
 	protected int strength;
 	protected int gold;
@@ -21,6 +25,14 @@ public class GameCharacters {
 		return this.LifePoints;
 	}
 	
+	public void moveTo(Room r) {
+		this.currentRoom = r;
+	}
+	
+	public Room currentRoom() {
+		return this.currentRoom;
+	}
+	
 	public int getStrength() {
 		return this.strength;
 	}
@@ -34,16 +46,30 @@ public class GameCharacters {
 	}
 	
 	public boolean isAlive() {
-		return this.getLifePoints() == 0;
+		return this.getLifePoints() > 0;
 	}
 	
-	public void LooseLife(int st) {
+	public void loseLife(int st) {
 		this.LifePoints -= st;
 	}
 	
+	public abstract void die();
+	
 	public void attack(GameCharacters theOtherCharacterToAttack) {
-		theOtherCharacterToAttack.LooseLife(this.getStrength());
-		if (theOtherCharacterToAttack.getLifePoints() >= 0)
-			this.LooseLife(theOtherCharacterToAttack.getStrength());
+		/* The GameCharacter issuing the attack hits the other character */
+		theOtherCharacterToAttack.loseLife(this.getStrength());
+		/* If the other thing dies, it cannot counter-attack */
+		if (theOtherCharacterToAttack.isAlive()) {
+			/* Otherwise, it counter-attacks. */
+			this.loseLife(theOtherCharacterToAttack.getStrength());
+			/* Did the other character kill the attacker ? */
+			if (!this.isAlive()) {
+				/* Yes he did */
+				this.die();
+			}
+		} else {
+			/* The attacker killed the other character */
+			theOtherCharacterToAttack.die();
+		}
 	}
 }

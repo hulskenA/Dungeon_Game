@@ -13,14 +13,15 @@ public class MoveAction implements Action {
 
 	public boolean canBeDoneIn(Room r) {
 		/* A player can move if there aren't any live monsters in the room */
-		return r.getMonsters().isEmpty();
+		return r.getCharacters().isEmpty();
 	}
 
 	public void doneByIn(Player p, Room r) {
 		List<Direction> directions = new ArrayList<Direction>();
 		directions.addAll(r.getPossibleDirections());
-		Direction d = ListChoser.chose("Which direction will you take?",directions, true);
-		
+		Direction d = ListChoser.chose("Which direction will you take?",directions);
+		System.out.println("You have moved to the next room!");
+		p.moveTo(r.getNeighbour(d));
 	}
 
 	public String toString() {
