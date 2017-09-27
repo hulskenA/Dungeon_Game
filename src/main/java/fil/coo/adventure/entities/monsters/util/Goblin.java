@@ -6,4 +6,8 @@ public class Goblin extends Monster {
 	public Goblin() {
 		super(15, 5);
 	}
+	
+	public String toString() {
+		return "Goblin : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
+	}
 }

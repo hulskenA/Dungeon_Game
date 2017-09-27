@@ -15,9 +15,9 @@ public class ListChoser {
 	 */
 	public static<T> T chose(String msg, List<T> items) {
 		int cpt = 1;
-		System.out.println("Do nothing (0)");
+		System.out.println("[0] Do nothing");
 		for (T item : items) { 	 
-			System.out.println(item+" ("+cpt+")"); 	    cpt++; 	} 
+			System.out.println("["+cpt+"] "+item); 	    cpt++; 	} 
 		System.out.println(msg); 
 		int choice = ScannerInt.readInt(cpt);    
 		if (choice == 0) 	    

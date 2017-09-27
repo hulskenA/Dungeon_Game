@@ -33,6 +33,7 @@ public class AdventureGame {
 			for (Action a: this.getPlayer().canDo())
 				if (a.canBeDoneIn(this.player.currentRoom()))
 					possibleActions.add(a);
+			System.out.println("------------------------------");
 			/* We let the player select an action to perform */
 			Action a = ListChoser.chose("What will you do?",possibleActions);
 			/* We perform the action */

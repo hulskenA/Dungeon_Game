@@ -13,9 +13,12 @@ public class LootAction implements Action  {
 	}
 
 	public void doneByIn(Player p, Room r) {
+		int goldWin = 0;
 		for (GameCharacters gc : r.getDeads())
-			p.addGold(gc.getGold());
+			goldWin += gc.getGold();
+		p.addGold(goldWin);
 		r.getDeads().removeAll(r.getDeads());
+		System.out.println("After loot all corpses, you win "+goldWin+" gold coins :)");
 	}
 
 	public String toString() {

@@ -6,4 +6,8 @@ public class Looter extends Monster {
 	public Looter() {
 		super(20, 20);
 	}
+	
+	public String toString() {
+		return "Looter : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
+	}
 }

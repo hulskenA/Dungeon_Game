@@ -6,4 +6,8 @@ public class ZombiesHord extends Monster {
 	public ZombiesHord() {
 		super(40, 5);
 	}
+	
+	public String toString() {
+		return "ZombiesHord : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
+	}
 }

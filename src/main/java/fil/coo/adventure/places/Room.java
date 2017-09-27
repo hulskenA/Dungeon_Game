@@ -10,6 +10,7 @@ import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.items.Item;
 import fil.coo.adventure.entities.items.util.OneArmedBandit;
 import fil.coo.adventure.entities.monsters.Monster;
+import fil.coo.adventure.entities.monsters.util.Slime;
 import fil.coo.adventure.places.Direction;
 
 public class Room {
@@ -74,7 +75,7 @@ public class Room {
 	public static Room generateMap() {
 		Room room = new Room();
 		Room tmp = new Room();
-		room.addCharacter(new Monster(5,3));
+		room.addCharacter(new Slime());
 		room.addNeighbour(Direction.W, tmp);
 		tmp.addNeighbour(Direction.E, room);
 		tmp = new Room();

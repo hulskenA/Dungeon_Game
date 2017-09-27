@@ -6,4 +6,8 @@ public class Balrog extends Monster {
 	public Balrog() {
 		super(80, 25);
 	}
+	
+	public String toString() {
+		return "Balrog : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
+	}
 }

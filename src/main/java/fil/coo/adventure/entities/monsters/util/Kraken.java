@@ -6,4 +6,8 @@ public class Kraken extends Monster {
 	public Kraken() {
 		super(60, 15);
 	}
+	
+	public String toString() {
+		return "Kraken : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
+	}
 }
