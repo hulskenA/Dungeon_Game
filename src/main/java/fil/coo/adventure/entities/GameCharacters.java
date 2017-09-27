@@ -37,6 +37,10 @@ public abstract class GameCharacters {
 		return this.strength;
 	}
 	
+	public void addStrength(int st) {
+		this.strength += st;
+	}
+	
 	public int getGold() {
 		return this.gold;
 	}

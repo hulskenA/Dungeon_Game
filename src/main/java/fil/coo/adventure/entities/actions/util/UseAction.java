@@ -1,8 +1,10 @@
 package fil.coo.adventure.entities.actions.util;
 
+import fil.coo.adventure.entities.items.Item;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.actions.Action;
 import fil.coo.adventure.places.Room;
+import fil.coo.adventure.util.ListChoser;
 
 public class UseAction implements Action {
 
@@ -12,9 +14,12 @@ public class UseAction implements Action {
 	}
 
 	public void doneByIn(Player p, Room r) {
-		// To be defined
+		/* We let the player choose will item he wants to use */
+		Item i = ListChoser.chose("What will you use?", r.getItems());
+		/* We use the item */
+		i.isUsedBy(p);
 	}
-	
+
 
 	public String toString() {
 		return "Pick up and use an item";
