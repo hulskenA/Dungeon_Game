@@ -24,7 +24,10 @@ public class AdventureGame {
 		while(!this.isFinished()) {
 			System.out.println("\n\n------------------------------------------------");
 			/* Print the description of the room by overriding the toString method */
-			System.out.println(this.player.currentRoom());
+			if (this.player.currentRoom().isDiscoverd())
+				System.out.println(this.player.currentRoom().description());
+			else
+				System.out.println(this.player.currentRoom().toString());
 			
 			/* Finding out which actions the player can execute in the current room */
 			List<Action> possibleActions = new ArrayList<Action>();

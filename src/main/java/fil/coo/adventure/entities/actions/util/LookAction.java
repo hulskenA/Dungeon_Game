@@ -17,8 +17,9 @@ public class LookAction implements Action {
 	}
 	
 	public void doneByIn(Player p, Room r) {
+		r.discovered();
 		System.out.println(p.description());
-		System.out.println("\nRoom's description :");
+		System.out.println("\nRoom's description :\n\t["+r.description()+"]");
 		PrintLookable.printList("Monsters", r.getCharacters());
 		PrintLookable.printList("Items", r.getItems());
 		PrintLookable.printList("Dead", r.getDeads());
