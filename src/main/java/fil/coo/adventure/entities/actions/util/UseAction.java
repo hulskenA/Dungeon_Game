@@ -10,7 +10,7 @@ public class UseAction implements Action {
 
 	public boolean canBeDoneIn(Room r) {
 		/* There must be items in the room for the player to pick up. */
-		return !r.getItems().isEmpty();
+		return !r.getItems().isEmpty() && r.isDiscoverd();
 	}
 
 	public void doneByIn(Player p, Room r) {

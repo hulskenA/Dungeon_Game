@@ -9,7 +9,7 @@ import fil.coo.adventure.places.Room;
 public class LootAction implements Action  {
 
 	public boolean canBeDoneIn(Room r) {
-		return !r.getDeads().isEmpty();
+		return !r.getDeads().isEmpty() && r.isDiscoverd();
 	}
 
 	public void doneByIn(Player p, Room r) {

@@ -13,7 +13,7 @@ public class MoveAction implements Action {
 
 	public boolean canBeDoneIn(Room r) {
 		/* A player can move if there aren't any live monsters in the room */
-		return r.getCharacters().isEmpty();
+		return r.getCharacters().isEmpty() && r.isDiscoverd();
 	}
 
 	public void doneByIn(Player p, Room r) {
