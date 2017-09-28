@@ -5,10 +5,10 @@ import java.util.Random;
 import fil.coo.adventure.util.Lookable;
 
 public enum Direction implements Lookable {
-	N("north"),
-	S("south"),
-	E("east"),
-	W("west");
+	N("North"),
+	S("South"),
+	E("East"),
+	W("West");
 	
 	private String name;
 	
@@ -41,6 +41,6 @@ public enum Direction implements Lookable {
 	}
 
 	public String description() {
-		return this.toString();
+		return "A gate in "+this.toString();
 	}
 }

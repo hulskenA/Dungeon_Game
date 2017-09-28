@@ -16,7 +16,15 @@ import fil.coo.adventure.util.Lookable;
 
 public class Room implements Lookable {
 	private static ArrayList<String> descriptions = new ArrayList<String>(); {{
-		descriptions.add(new String("this is a room"));
+		descriptions.add(new String("This is a normal room"));
+		descriptions.add(new String("Vous entrée dans une salle à manger, il y a un de ces festins sur la table mais attention ce doit être un piège"));
+		descriptions.add(new String("Oh il y a une fenêtre ici, je ne me souvenais plus à quoi ressemblait le solei... Ah non, il fait nuit --'"));
+		descriptions.add(new String("Encore une chambre !!!! Mais on ne trouve que ça ici ou quoi?"));
+		descriptions.add(new String("Et oui je me suis amusé à décrire plein de pièces, mais pas celle-ci Mouahah... *un rire diabolique*"));
+		descriptions.add(new String("Tiens pourquoi tant de sang ici?"));
+		descriptions.add(new String("Allez ooouuuuuuuuiiiiiiiii une salle de jeu... Ah non c'est une salle de torture, bon ba c'est presque pareille de toute façon"));
+		descriptions.add(new String("C'est sale, qui fait le ménage ici que j'aille me plaindre"));
+		descriptions.add(new String("UNE SALLE DE COURS !!! NOOOOOOOOOOOON PAS CA..."));
 	}}
 
 	protected List<GameCharacters> characters;
@@ -80,8 +88,10 @@ public class Room implements Lookable {
 	}
 	
 	public void discovered() {
-		Random r = new Random();
-		this.isDiscovered = r.nextInt(descriptions.size());
+		if (!this.isDiscoverd()) {
+			Random r = new Random();
+			this.isDiscovered = r.nextInt(descriptions.size());
+		}
 	}
 	
 	private void addNeighbour(Direction d, Room r) {
