@@ -17,4 +17,9 @@ public class StrengthPotion extends Item {
 		return "StrengthPotion : "+st+" SP";
 	}
 
+	@Override
+	public String description() {
+		return "Strength potion \n\t> C'est une petite fiole bleu de forme cônique avec une tête de mort dessus";
+	}
+
 }

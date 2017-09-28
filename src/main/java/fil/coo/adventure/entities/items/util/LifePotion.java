@@ -14,7 +14,12 @@ public class LifePotion extends Item {
 	}
 	
 	public String toString() {
-		return "LifePotion : +"+lp+" LP";
+		return "LifePotion : "+lp+" LP";
+	}
+
+	@Override
+	public String description() {
+		return "Life potion\n\t> une grande marmitte rose qui fait des bulles et avec le coeur d'un zombi dedans *Beurk*";
 	}
 
 }

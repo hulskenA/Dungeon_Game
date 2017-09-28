@@ -10,4 +10,9 @@ public class Goblin extends Monster {
 	public String toString() {
 		return "Goblin : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
 	}
+
+	@Override
+	public String description() {
+		return "Goblin\n\t[c'est petit, tout vert et ça n'a aucune manière, Oui c'est bien un goblin]";
+	}
 }

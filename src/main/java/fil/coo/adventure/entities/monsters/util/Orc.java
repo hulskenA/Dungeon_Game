@@ -10,4 +10,9 @@ public class Orc extends Monster {
 	public String toString() {
 		return "Orc : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
 	}
+
+	@Override
+	public String description() {
+		return "Orc\n\t[Un orc quoi tu sais bien ce que c'est, je vais pas être obligé de te décrire absolument tout ce qui se trouve devant toi, je ne suis pas ton larbin rêve pas trop mon gros...]";
+	}
 }

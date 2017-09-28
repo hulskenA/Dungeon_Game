@@ -10,4 +10,9 @@ public class Looter extends Monster {
 	public String toString() {
 		return "Looter : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
 	}
+
+	@Override
+	public String description() {
+		return "Looter\n\t[I hate them, je vais devoir faire attention à mon or parce que J'AIME l'argeeeeent]";
+	}
 }

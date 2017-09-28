@@ -10,4 +10,9 @@ public class Slime extends Monster {
 	public String toString() {
 		return "Slime : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
 	}
+
+	@Override
+	public String description() {
+		return "Slime\n\t[une petite boule visqueuse et répugnante, je devrais pouvoir l'écraser sous ma chaussure mais ça risque de me coller dessus]";
+	}
 }

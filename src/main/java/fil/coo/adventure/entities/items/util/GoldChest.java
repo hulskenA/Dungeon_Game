@@ -16,4 +16,10 @@ public class GoldChest extends Item {
 	public String toString() {
 		return "GoldChest : "+gold+" gold coins";
 	}
+
+	@Override
+	public String description() {
+		return "Gold chest\n\t> un coffre qui déborde de pièces d'or";
+	}
+	
 }

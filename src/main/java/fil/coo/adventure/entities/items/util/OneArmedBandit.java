@@ -33,7 +33,12 @@ public class OneArmedBandit extends Item {
 	}
 	
 	public String toString() {
-		return "OneArmeBandit : "+price+" cost";
+		return "OneArmeBandit : "+price+" cost (for win one item)";
 	}
+
+	@Override
+	public String description() {
+		return "OneArmedBandit\n\t> \"C'EST MAGIQUE !\"";
+	}	
 
 }

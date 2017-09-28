@@ -1,8 +1,9 @@
 package fil.coo.adventure.entities;
 
 import fil.coo.adventure.places.Room;
+import fil.coo.adventure.util.Lookable;
 
-public abstract class GameCharacters {
+public abstract class GameCharacters implements Lookable {
 	
 	protected Room currentRoom;
 	protected int LifePoints;
@@ -58,6 +59,8 @@ public abstract class GameCharacters {
 	}
 	
 	public abstract void die();
+	
+	public abstract String description();
 	
 	public void attack(GameCharacters theOtherCharacterToAttack) {
 		/* The GameCharacter issuing the attack hits the other character */
