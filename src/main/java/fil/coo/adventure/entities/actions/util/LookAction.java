@@ -11,7 +11,7 @@ public class LookAction implements Action {
 	}
 	
 	public void doneByIn(Player p, Room r) {
-		return;
+		System.out.println(this.toString());
 	}
 	
 	public String toString() {

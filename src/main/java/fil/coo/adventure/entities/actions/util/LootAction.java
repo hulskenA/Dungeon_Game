@@ -18,7 +18,7 @@ public class LootAction implements Action  {
 			goldWin += gc.getGold();
 		p.addGold(goldWin);
 		r.getDeads().removeAll(r.getDeads());
-		System.out.println("After loot all corpses, you win "+goldWin+" gold coins :)");
+		System.out.println("\t> After loot all corpses, you win "+goldWin+" gold coins :)");
 	}
 
 	public String toString() {

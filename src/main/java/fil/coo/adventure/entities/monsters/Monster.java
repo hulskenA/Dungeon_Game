@@ -8,7 +8,7 @@ public class Monster extends GameCharacters {
 	public Monster(int lP, int st) {
 		super(lP, st);
 		Random r = new Random();
-		this.gold = r.nextInt(200);
+		this.gold = r.nextInt(150);
 	}
 	
 	public void die() {

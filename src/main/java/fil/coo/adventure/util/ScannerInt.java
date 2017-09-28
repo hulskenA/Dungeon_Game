@@ -15,7 +15,7 @@ public class ScannerInt {
 	public static int readInt(int n) {
 		int input = -1;
 		while (input < 0 || input >= n) {
-			System.out.print("your choice (0-" + (n - 1) + ") ? ");
+			System.out.print("\nyour choice (0-" + (n - 1) + ") ? ");
 			try {
 				input = scanner.nextInt();
 			} catch (InputMismatchException	 e){

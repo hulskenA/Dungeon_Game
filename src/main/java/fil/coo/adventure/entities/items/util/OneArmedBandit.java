@@ -21,14 +21,14 @@ public class OneArmedBandit extends Item {
 	@Override
 	public void isUsedBy(Player player) {
 		if (player.getGold() < price)
-			System.out.println("You must have more "+(price-player.getGold())+" gold coins for use it!");
+			System.out.println("\t> You must have more "+(price-player.getGold())+" gold coins for use it!");
 		else {
 			Random r = new Random();
 			int index = r.nextInt(possible.size());
 			Item item = this.possible.get(index);
 			this.currentRoom().addItem(item);
 			this.currentRoom().removeItem(this);
-			System.out.println("You win "+item.toString());
+			System.out.println("\t> You win "+item.toString());
 		}
 	}
 	

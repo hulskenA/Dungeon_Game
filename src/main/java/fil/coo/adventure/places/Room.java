@@ -8,9 +8,9 @@ import java.util.Set;
 
 import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.items.Item;
-import fil.coo.adventure.entities.items.util.OneArmedBandit;
+import fil.coo.adventure.entities.items.util.*;
 import fil.coo.adventure.entities.monsters.Monster;
-import fil.coo.adventure.entities.monsters.util.Slime;
+import fil.coo.adventure.entities.monsters.util.*;
 import fil.coo.adventure.places.Direction;
 
 public class Room {
@@ -82,6 +82,7 @@ public class Room {
 		room.addNeighbour(Direction.E, tmp);
 		tmp.addNeighbour(Direction.W, room);
 		tmp.addItem(new OneArmedBandit());
+		tmp.addCharacter(new Balrog());
 		tmp = new Exit();
 		tmp.addNeighbour(Direction.S, room);
 		room.addNeighbour(Direction.N, tmp);

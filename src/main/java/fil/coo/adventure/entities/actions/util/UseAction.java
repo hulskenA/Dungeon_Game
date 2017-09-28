@@ -17,7 +17,12 @@ public class UseAction implements Action {
 		/* We let the player choose will item he wants to use */
 		Item i = ListChoser.chose("What will you use?", r.getItems());
 		/* We use the item */
-		i.isUsedBy(p);
+		if (i == null) {
+			System.out.println("\t> You don't use any item");
+		}
+		else {
+			i.isUsedBy(p);
+		}
 	}
 
 

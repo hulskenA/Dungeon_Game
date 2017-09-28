@@ -22,7 +22,7 @@ public class AdventureGame {
 	
 	public void play() {
 		while(!this.isFinished()) {
-			System.out.println("------------------------------");
+			System.out.println("\n------------------------------");
 			/* Print the description of the room by overriding the toString method */
 			System.out.println(this.player.currentRoom());
 			
@@ -33,11 +33,15 @@ public class AdventureGame {
 			for (Action a: this.getPlayer().canDo())
 				if (a.canBeDoneIn(this.player.currentRoom()))
 					possibleActions.add(a);
-			System.out.println("------------------------------");
+			System.out.println("------------------------------\n");
 			/* We let the player select an action to perform */
 			Action a = ListChoser.chose("What will you do?",possibleActions);
-			/* We perform the action */
-			a.doneByIn(this.getPlayer(), this.player.currentRoom());
+			if (a==null)
+				System.out.println("\t> Ce que tu as fait ne sert à rien mais voilà...");
+			else {
+				/* We perform the action */
+				a.doneByIn(this.getPlayer(), this.player.currentRoom());
+			}
 		}
 	}
 

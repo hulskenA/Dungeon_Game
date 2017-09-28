@@ -23,6 +23,6 @@ public class Player extends GameCharacters {
 	}
 	
 	public void die() {
-		System.out.println("You are dead....");
+		System.out.println("\t> You are dead....");
 	}
 }

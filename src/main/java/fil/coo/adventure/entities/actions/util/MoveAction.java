@@ -20,8 +20,12 @@ public class MoveAction implements Action {
 		List<Direction> directions = new ArrayList<Direction>();
 		directions.addAll(r.getPossibleDirections());
 		Direction d = ListChoser.chose("Which direction will you take?",directions);
-		System.out.println("You have moved to the next room!");
-		p.moveTo(r.getNeighbour(d));
+		if (d == null) {
+			System.out.println("\t> you rest her");
+		} else {
+			System.out.println("\t> You have moved to the next room!");
+			p.moveTo(r.getNeighbour(d));
+		}
 	}
 
 	public String toString() {

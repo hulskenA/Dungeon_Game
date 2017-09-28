@@ -13,12 +13,14 @@ public class ListChoser {
 	 * @param items The items from which the user will have to chose
 	 * @return The chosen option
 	 */
-	public static<T> T chose(String msg, List<T> items) {
-		int cpt = 1;
-		System.out.println("[0] Do nothing");
-		for (T item : items) { 	 
-			System.out.println("["+cpt+"] "+item); 	    cpt++; 	} 
+	public static<T> T chose(String msg, List<T> items) { 
 		System.out.println(msg); 
+		int cpt = 1;
+		System.out.println("\t[0] Do nothing");
+		for (T item : items) { 	 
+			System.out.println("\t["+cpt+"] "+item);
+			cpt++;
+		}
 		int choice = ScannerInt.readInt(cpt);    
 		if (choice == 0) 	    
 			return null; 	
