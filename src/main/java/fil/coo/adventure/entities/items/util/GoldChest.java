@@ -11,6 +11,7 @@ public class GoldChest extends Item {
 	public void isUsedBy(Player player) {
 		player.addGold(gold);
 		this.currentRoom().removeItem(this);
+		System.out.println("\t> You win "+gold+" gold coins");
 	}
 	
 	public String toString() {
@@ -19,7 +20,7 @@ public class GoldChest extends Item {
 
 	@Override
 	public String description() {
-		return "Gold chest\n\t> un coffre qui déborde de pièces d'or";
+		return "Gold chest\n\t[un coffre qui déborde de pièces d'or]";
 	}
 	
 }

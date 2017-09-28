@@ -2,7 +2,9 @@ package fil.coo.adventure.places;
 
 import java.util.Random;
 
-public enum Direction {
+import fil.coo.adventure.util.Lookable;
+
+public enum Direction implements Lookable {
 	N("north"),
 	S("south"),
 	E("east"),
@@ -36,5 +38,9 @@ public enum Direction {
 		// 		return Direction.E;
 		// }
 	    return Direction.S;
+	}
+
+	public String description() {
+		return this.toString();
 	}
 }

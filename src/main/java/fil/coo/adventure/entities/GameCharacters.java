@@ -61,26 +61,27 @@ public abstract class GameCharacters implements Lookable {
 	public abstract void die();
 	
 	public abstract String description();
+	public abstract void attack(GameCharacters theOtherCharacterToAttack);
 	
-	public void attack(GameCharacters theOtherCharacterToAttack) {
-		/* The GameCharacter issuing the attack hits the other character */
-		theOtherCharacterToAttack.loseLife(this.getStrength());
-		System.out.println("\t> It lost "+this.getStrength()+" Life Points");
-		/* If the other thing dies, it cannot counter-attack */
-		if (theOtherCharacterToAttack.isAlive()) {
-			/* Otherwise, it counter-attacks. */
-			this.loseLife(theOtherCharacterToAttack.getStrength());
-			System.out.println("\t> He ripostes and you lost "+theOtherCharacterToAttack.getStrength()+" Life Points\n\t> Now you have "+this.getLifePoints()+" LP");
-			/* Did the other character kill the attacker ? */
-			if (!this.isAlive()) {
-				/* Yes he did */
-				System.out.println("\t> You are died\n\t> You have lose this game\n\t> You are a shit\n\t> Ahahahah !!!");
-				this.die();
-			}
-		} else {
-			/* The attacker killed the other character */
-			System.out.println("\t> He is died now !!! :D");
-			theOtherCharacterToAttack.die();
-		}
-	}
+//	public void attack(GameCharacters theOtherCharacterToAttack) {
+//		/* The GameCharacter issuing the attack hits the other character */
+//		theOtherCharacterToAttack.loseLife(this.getStrength());
+//		System.out.println("\t> It lost "+this.getStrength()+" Life Points");
+//		/* If the other thing dies, it cannot counter-attack */
+//		if (theOtherCharacterToAttack.isAlive()) {
+//			/* Otherwise, it counter-attacks. */
+//			this.loseLife(theOtherCharacterToAttack.getStrength());
+//			System.out.println("\t> He ripostes and you lost "+theOtherCharacterToAttack.getStrength()+" Life Points\n\t> Now you have "+this.getLifePoints()+" LP");
+//			/* Did the other character kill the attacker ? */
+//			if (!this.isAlive()) {
+//				/* Yes he did */
+//				System.out.println("\t> You are died\n\t> You have lose this game\n\t> You are a shit\n\t> Ahahahah !!!");
+//				this.die();
+//			}
+//		} else {
+//			/* The attacker killed the other character */
+//			System.out.println("\t> He is died now !!! :D");
+//			theOtherCharacterToAttack.die();
+//		}
+//	}**/
 }

@@ -11,6 +11,7 @@ public class StrengthPotion extends Item {
 	public void isUsedBy(Player player) {
 		player.addStrength(st);
 		this.currentRoom().removeItem(this);
+		System.out.println("\t> You win "+st+"Strength points");
 	}
 	
 	public String toString() {
@@ -19,7 +20,7 @@ public class StrengthPotion extends Item {
 
 	@Override
 	public String description() {
-		return "Strength potion \n\t> C'est une petite fiole bleu de forme cônique avec une tête de mort dessus";
+		return "Strength potion \n\t[C'est une petite fiole bleu de forme cônique avec une tête de mort dessus]";
 	}
 
 }

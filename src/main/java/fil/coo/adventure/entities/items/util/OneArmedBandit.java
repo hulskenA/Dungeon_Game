@@ -38,7 +38,7 @@ public class OneArmedBandit extends Item {
 
 	@Override
 	public String description() {
-		return "OneArmedBandit\n\t> \"C'EST MAGIQUE !\"";
+		return "OneArmedBandit\n\t[\"C'EST MAGIQUE !\"]";
 	}	
 
 }

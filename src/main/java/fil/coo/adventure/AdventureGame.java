@@ -22,7 +22,7 @@ public class AdventureGame {
 	
 	public void play() {
 		while(!this.isFinished()) {
-			System.out.println("\n------------------------------------------------");
+			System.out.println("\n\n------------------------------------------------");
 			/* Print the description of the room by overriding the toString method */
 			System.out.println(this.player.currentRoom());
 			
