@@ -27,17 +27,16 @@ public enum Direction implements Lookable {
 	}
 	
 	public Direction opposite() {
-		// switch(this.name) {
-		// 	case "north":
-		// 		return Direction.S;
-		// 	case "south":
-		// 		return Direction.N;
-		// 	case "east":
-		// 		return Direction.W;
-		// 	default:
-		// 		return Direction.E;
-		// }
-	    return Direction.S;
+		 switch(this) {
+		 	case N:
+		 		return Direction.S;
+		 	case S:
+		 		return Direction.N;
+		 	case E:
+		 		return Direction.W;
+		 	default:
+		 		return Direction.E;
+		 }
 	}
 
 	public String description() {

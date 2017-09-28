@@ -19,7 +19,7 @@ public class Slime extends Monster implements SpecialMonster {
 
 	public void specialeffect(GameCharacters gm) {
 		gm.addStrength(5);
-		gm.loseLife(-st);
+		gm.loseLife(-5);
 		System.out.println("\t> Vous avez gagné 5 points de force et de vie car vous vous sentez fort d'avoir exterminé ce truc");
 	}
 }
