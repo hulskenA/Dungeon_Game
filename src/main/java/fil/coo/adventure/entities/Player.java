@@ -42,4 +42,9 @@ public class Player extends GameCharacters {
 			theOtherCharacterToAttack.die();
 		}
 	}
+
+	@Override
+	public String name() {
+		return "You";
+	}
 }

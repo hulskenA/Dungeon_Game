@@ -1,20 +1,20 @@
 package fil.coo.adventure.entities.monsters.util;
 
 import fil.coo.adventure.entities.GameCharacters;
-import fil.coo.adventure.entities.monsters.*;
+import fil.coo.adventure.entities.monsters.Monster;
 
-public class ZombiesHord extends Monster implements SpecialMonster {
+public class ZombiesHord extends Monster {
 	public ZombiesHord() {
 		super(40, 5);
 	}
 	
-	public String toString() {
-		return "ZombiesHord : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
+	public String name() {
+		return "ZombiesHord";
 	}
 
 	@Override
 	public String description() {
-		return "ZombiesHord\n\t[oh ce zombi n'a pas trop l'air méchant, mais attends, il n'est pas seul... Oh merde il sont beaucoups trop nombreux et ils ont faim en plus]";
+		return this.name()+"\n\t[oh ce zombi n'a pas trop l'air méchant, mais attends, il n'est pas seul... Oh merde il sont beaucoups trop nombreux et ils ont faim en plus]";
 	}
 
 	public void specialeffect(GameCharacters gm) {

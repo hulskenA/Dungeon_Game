@@ -7,12 +7,12 @@ public class Balrog extends Monster {
 		super(80, 25);
 	}
 	
-	public String toString() {
-		return "Balrog : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
+	public String name() {
+		return "Balrog";
 	}
 
 	@Override
 	public String description() {
-		return "Balrog\n\t[Venu des plus profondes entrailles de la Terre, cette créature de feu et de ténèbre veut votre mort plus que tout au monde (Fuyez pauvres fous)]";
+		return this.name()+"\n\t[Venu des plus profondes entrailles de la Terre, cette créature de feu et de ténèbre veut votre mort plus que tout au monde (Fuyez pauvres fous)]";
 	}
 }

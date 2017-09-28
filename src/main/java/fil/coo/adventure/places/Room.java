@@ -101,10 +101,12 @@ public class Room implements Lookable {
 	public static Room generateMap() {
 		Room room = new Room();
 		Room tmp = new Room();
+		Direction d = Direction.W;
 		room.addCharacter(new Slime());
 		room.addCharacter(new Balrog());
 		room.addCharacter(new Dragon());
 		room.addCharacter(new Goblin());
+		room.addCharacter(new KingGoblin());
 		room.addCharacter(new Kraken());
 		room.addCharacter(new Looter());
 		room.addCharacter(new Orc());
@@ -113,14 +115,16 @@ public class Room implements Lookable {
 		room.addItem(new GoldChest());
 		room.addItem(new LifePotion());
 		room.addItem(new StrengthPotion());
-		room.addNeighbour(Direction.W, tmp);
-		tmp.addNeighbour(Direction.E, room);
+		room.addNeighbour(d, tmp);
+		tmp.addNeighbour(d.opposite(), room);
 		tmp = new Room();
-		room.addNeighbour(Direction.E, tmp);
-		tmp.addNeighbour(Direction.W, room);
+		d = Direction.E;
+		room.addNeighbour(d, tmp);
+		tmp.addNeighbour(d.opposite(), room);
 		tmp = new Exit();
-		tmp.addNeighbour(Direction.S, room);
-		room.addNeighbour(Direction.N, tmp);
+		d = Direction.S;
+		tmp.addNeighbour(d, room);
+		room.addNeighbour(d.opposite(), tmp);
 		return room;
 	}
 	
@@ -138,5 +142,10 @@ public class Room implements Lookable {
 
 	public String description() {
 		return descriptions.get(this.isDiscovered);
+	}
+	
+	public GameCharacters alea() {
+		Random r = new Random();
+		return this.getCharacters().get(r.nextInt(this.getCharacters().size()));
 	}
 }

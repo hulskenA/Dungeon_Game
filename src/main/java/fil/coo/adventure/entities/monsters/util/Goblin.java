@@ -7,12 +7,12 @@ public class Goblin extends Monster {
 		super(15, 5);
 	}
 	
-	public String toString() {
-		return "Goblin : LP:"+this.getLifePoints()+", SP: "+this.getStrength();
+	public String name() {
+		return "Goblin";
 	}
 
 	@Override
 	public String description() {
-		return "Goblin\n\t[c'est petit, tout vert et ça n'a aucune manière, Oui c'est bien un goblin]";
+		return this.name()+"\n\t[c'est petit, tout vert et ça n'a aucune manière, Oui c'est bien un goblin]";
 	}
 }
