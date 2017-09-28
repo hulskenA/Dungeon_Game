@@ -19,7 +19,7 @@ public abstract class Monster extends GameCharacters implements SpecialMonster {
 		System.out.println("\t> It ripostes and you lost "+theOtherCharacterToAttack.getStrength()+" Life Points");
 		this.specialeffect(theOtherCharacterToAttack);
 		if (theOtherCharacterToAttack.isAlive())
-			System.out.println("\n\t> Now you have "+this.getLifePoints()+" LP");
+			System.out.println("\n\t> Now you have "+theOtherCharacterToAttack.getLifePoints()+" LP\n\t> It have "+this.getLifePoints()+" LP");
 		else
 			theOtherCharacterToAttack.die();
 	}

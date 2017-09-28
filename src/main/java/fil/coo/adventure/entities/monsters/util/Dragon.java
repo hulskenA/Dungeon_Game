@@ -9,7 +9,7 @@ public class Dragon extends Monster {
 	
 	public String name() {
 		return "Dragon";
-	}	
+	}
 	
 	@Override
 	public String description() {

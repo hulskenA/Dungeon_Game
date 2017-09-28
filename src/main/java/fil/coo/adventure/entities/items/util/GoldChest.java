@@ -5,17 +5,21 @@ import fil.coo.adventure.entities.Player;
 
 public class GoldChest extends Item {
 	
-	private final static int gold = 100;
+	protected int gold = 100;
 
 	@Override
 	public void isUsedBy(Player player) {
-		player.addGold(gold);
+		player.addGold(this.gold);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> You win "+gold+" gold coins");
+		System.out.println("\t> You win "+this.gold+" gold coins");
 	}
-	
+
+	public String name() {
+		return "GoldChest";
+	}
+
 	public String toString() {
-		return "GoldChest : "+gold+" gold coins";
+		return this.name()+" : "+this.gold+" gold coins";
 	}
 
 	@Override

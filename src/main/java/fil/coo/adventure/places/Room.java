@@ -113,6 +113,7 @@ public class Room implements Lookable {
 		room.addCharacter(new ZombiesHord());
 		room.addItem(new OneArmedBandit());
 		room.addItem(new GoldChest());
+		room.addItem(new SleepedBadChest());
 		room.addItem(new LifePotion());
 		room.addItem(new StrengthPotion());
 		room.addNeighbour(d, tmp);
