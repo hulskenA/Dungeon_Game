@@ -2,8 +2,11 @@ package fil.coo.adventure.entities.items.util;
 
 import fil.coo.adventure.AdventureGame;
 
-public class GoldStockExchage extends GoldChest {
-	protected int gold = 20;
+public class GoldStockExchange extends GoldChest {
+	
+	public GoldStockExchange() {
+		this.gold = 20;
+	}
 	
 	public String name() {
 		return AdventureGame.TRANSLATOR.translate("GoldStockExchange");

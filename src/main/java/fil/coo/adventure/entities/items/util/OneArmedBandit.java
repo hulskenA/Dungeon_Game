@@ -10,14 +10,12 @@ import fil.coo.adventure.entities.items.Item;
 
 public class OneArmedBandit extends Item {
 	
-	private final static int price = 100;
-	private final List<Item> possible = new ArrayList<Item>();
-
-	public OneArmedBandit() {
+	protected int price = 100;
+	private static final List<Item> possible = new ArrayList<Item>(); {{
 		possible.add(new GoldChest());
 		possible.add(new LifePotion());
 		possible.add(new StrengthPotion());
-	}
+	}}
 	
 	@Override
 	public void isUsedBy(Player player) {
@@ -26,7 +24,7 @@ public class OneArmedBandit extends Item {
 		else {
 			Random r = new Random();
 			int index = r.nextInt(possible.size());
-			Item item = this.possible.get(index);
+			Item item = possible.get(index);
 			this.currentRoom().addItem(item);
 			this.currentRoom().removeItem(this);
 			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+item.toString());

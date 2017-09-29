@@ -51,6 +51,9 @@ public class AdventureGame {
 				a.doneByIn(this.getPlayer(), this.player.currentRoom());
 			}
 		}
+		
+		if (this.player.isAlive())
+			System.out.println(AdventureGame.TRANSLATOR.translate("FINISH"));
 
 		TRANSLATOR.close();
 	}

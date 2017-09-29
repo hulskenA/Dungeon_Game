@@ -6,7 +6,7 @@ import fil.coo.adventure.entities.items.Item;
 
 public class StrengthPotion extends Item {
 	
-	private final static int st = 15;
+	protected int st = 15;
 
 	@Override
 	public void isUsedBy(Player player) {

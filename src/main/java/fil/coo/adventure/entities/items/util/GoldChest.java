@@ -6,7 +6,11 @@ import fil.coo.adventure.entities.Player;
 
 public class GoldChest extends Item {
 	
-	protected int gold = 100;
+	protected int gold;
+	
+	public GoldChest() {
+		this.gold=100;
+	}
 
 	@Override
 	public void isUsedBy(Player player) {
