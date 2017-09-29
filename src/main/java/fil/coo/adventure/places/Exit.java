@@ -1,5 +1,6 @@
 package fil.coo.adventure.places;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.monsters.util.Dragon;
 
 public class Exit extends Room {
@@ -13,6 +14,6 @@ public class Exit extends Room {
 	}
 	
 	public String toString() {
-		return "You have reached the exit room!";
+		return AdventureGame.TRANSLATOR.translate("ExitToString");
 	}
 }

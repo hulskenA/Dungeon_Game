@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.monsters.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.monsters.Monster;
 
@@ -14,13 +15,13 @@ public class Slime extends Monster {
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t[une petite boule visqueuse et répugnante, je devrais pouvoir l'écraser sous ma chaussure mais ça risque de me coller dessus]";
+		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("SlimeDescription")+"]";
 	}
 
 	public void specialeffect(GameCharacters gm) {
 		gm.addStrength(5);
 		gm.loseLife(-5);
-		System.out.println("\t> ce truc était radioactif, du coup en l'écrasant les projections en rendu le "+gm.name()+" plus fort de 5 points de vie et de force");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("SlimeEffect1")+gm.name()+AdventureGame.TRANSLATOR.translate("SlimeEffect2"));
 	}
 	
 	public void die() {

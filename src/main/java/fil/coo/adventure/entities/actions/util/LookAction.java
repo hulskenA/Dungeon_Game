@@ -3,6 +3,7 @@ package fil.coo.adventure.entities.actions.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.actions.Action;
 import fil.coo.adventure.places.Room;
@@ -19,15 +20,15 @@ public class LookAction implements Action {
 	public void doneByIn(Player p, Room r) {
 		r.discovered();
 		System.out.println(p.description());
-		System.out.println("\nRoom's description :\n\t["+r.description()+"]");
-		PrintLookable.printList("Monsters", r.getCharacters());
-		PrintLookable.printList("Items", r.getItems());
-		PrintLookable.printList("Dead", r.getDeads());
+		System.out.println("\n"+AdventureGame.TRANSLATOR.translate("LookRoom")+" :\n\t["+r.description()+"]");
+		PrintLookable.printList(AdventureGame.TRANSLATOR.translate("Monsters"), r.getCharacters());
+		PrintLookable.printList(AdventureGame.TRANSLATOR.translate("Items"), r.getItems());
+		PrintLookable.printList(AdventureGame.TRANSLATOR.translate("Dead"), r.getDeads());
 		List<Direction> directions = new ArrayList<Direction>(r.getPossibleDirections());
-		PrintLookable.printList("Directions", directions);
+		PrintLookable.printList(AdventureGame.TRANSLATOR.translate("Directions"), directions);
 	}
 	
 	public String toString() {
-		return "Look around";
+		return AdventureGame.TRANSLATOR.translate("Look");
 	}
 }

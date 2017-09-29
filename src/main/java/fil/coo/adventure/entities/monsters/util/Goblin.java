@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.monsters.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.monsters.Monster;
 
 public class Goblin extends Monster {
@@ -8,11 +9,11 @@ public class Goblin extends Monster {
 	}
 	
 	public String name() {
-		return "Goblin";
+		return AdventureGame.TRANSLATOR.translate("Goblin");
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t[c'est petit, tout vert et ça n'a aucune manière, Oui c'est bien un goblin]";
+		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("GoblinDescription")+"]";
 	}
 }

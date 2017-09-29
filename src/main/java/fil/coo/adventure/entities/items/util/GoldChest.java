@@ -1,6 +1,7 @@
 package fil.coo.adventure.entities.items.util;
 
 import fil.coo.adventure.entities.items.Item;
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.Player;
 
 public class GoldChest extends Item {
@@ -11,20 +12,20 @@ public class GoldChest extends Item {
 	public void isUsedBy(Player player) {
 		player.addGold(this.gold);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> You win "+this.gold+" gold coins");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+this.gold+" gold coins");
 	}
 
 	public String name() {
-		return "GoldChest";
+		return AdventureGame.TRANSLATOR.translate("GoldChest");
 	}
 
 	public String toString() {
-		return this.name()+" : "+this.gold+" gold coins";
+		return this.name()+" : "+this.gold+AdventureGame.TRANSLATOR.translate("GoldCoins");
 	}
 
 	@Override
 	public String description() {
-		return "Gold chest\n\t[un coffre qui déborde de pièces d'or]";
+		return AdventureGame.TRANSLATOR.translate("GoldChest")+"\n\t["+AdventureGame.TRANSLATOR.translate("GoldChestDescription")+"]";
 	}
 	
 }

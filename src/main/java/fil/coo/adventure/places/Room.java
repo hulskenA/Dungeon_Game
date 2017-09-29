@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.items.Item;
 import fil.coo.adventure.entities.items.util.*;
@@ -16,15 +17,15 @@ import fil.coo.adventure.util.Lookable;
 
 public class Room implements Lookable {
 	private static ArrayList<String> descriptions = new ArrayList<String>(); {{
-		descriptions.add(new String("This is a normal room"));
-		descriptions.add(new String("Vous entrée dans une salle à manger, il y a un de ces festins sur la table mais attention ce doit être un piège"));
-		descriptions.add(new String("Oh il y a une fenêtre ici, je ne me souvenais plus à quoi ressemblait le solei... Ah non, il fait nuit --'"));
-		descriptions.add(new String("Encore une chambre !!!! Mais on ne trouve que ça ici ou quoi?"));
-		descriptions.add(new String("Et oui je me suis amusé à décrire plein de pièces, mais pas celle-ci Mouahah... *un rire diabolique*"));
-		descriptions.add(new String("Tiens pourquoi tant de sang ici?"));
-		descriptions.add(new String("Allez ooouuuuuuuuiiiiiiiii une salle de jeu... Ah non c'est une salle de torture, bon ba c'est presque pareille de toute façon"));
-		descriptions.add(new String("C'est sale, qui fait le ménage ici que j'aille me plaindre"));
-		descriptions.add(new String("UNE SALLE DE COURS !!! NOOOOOOOOOOOON PAS CA..."));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription1"));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription2"));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription3"));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription4"));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription5"));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription6"));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription7"));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription8"));
+		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription9"));
 	}}
 
 	protected List<GameCharacters> characters;
@@ -138,7 +139,7 @@ public class Room implements Lookable {
 	}
 	
 	public String toString() {
-		return "You are in a normal dungeon room, it is dark...";
+		return AdventureGame.TRANSLATOR.translate("RoomToString");
 	}
 
 	public String description() {

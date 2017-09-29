@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.monsters.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.monsters.Monster;
 
 public class Kraken extends Monster {
@@ -8,11 +9,11 @@ public class Kraken extends Monster {
 	}
 	
 	public String name() {
-		return "Kraken";
+		return AdventureGame.TRANSLATOR.translate("Kraken");
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t[Dans ce petit lac (étonnant d'en trouver un comme ça en plein milieu de ce donjon, mais ne nous posons pas trop de questions) se trouve une bête avec plein de tentacules *Fallait lire avec une voix mystérieuse* Sauf que personne ne sait de quoi il sagit exactement]";
+		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("KrakenDescription")+"]";
 	}
 }

@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.items.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.items.Item;
 
@@ -11,16 +12,16 @@ public class LifePotion extends Item {
 	public void isUsedBy(Player player) {
 		player.loseLife(-lp);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> You win "+lp+"Life points");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+lp+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
 	}
 	
 	public String toString() {
-		return "LifePotion : "+lp+" LP";
+		return AdventureGame.TRANSLATOR.translate("LifePotion")+" : "+lp+" "+AdventureGame.TRANSLATOR.translate("LP");
 	}
 
 	@Override
 	public String description() {
-		return "Life potion\n\t[une grande marmitte rose qui fait des bulles et avec le coeur d'un zombi dedans *Beurk*]";
+		return AdventureGame.TRANSLATOR.translate("LifePotion")+"\n\t["+AdventureGame.TRANSLATOR.translate("LifePotionDescription")+"]";
 	}
 
 }

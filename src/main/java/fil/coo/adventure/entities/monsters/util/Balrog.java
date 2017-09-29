@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.monsters.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.monsters.Monster;
 
 public class Balrog extends Monster {
@@ -13,6 +14,6 @@ public class Balrog extends Monster {
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t[Venu des plus profondes entrailles de la Terre, cette créature de feu et de ténèbre veut votre mort plus que tout au monde (Fuyez pauvres fous)]";
+		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("BalrogDescription")+"]";
 	}
 }

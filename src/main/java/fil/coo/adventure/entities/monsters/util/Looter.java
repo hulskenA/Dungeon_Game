@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.monsters.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.monsters.Monster;
 
@@ -9,17 +10,17 @@ public class Looter extends Monster {
 	}
 	
 	public String name() {
-		return "Looter";
+		return AdventureGame.TRANSLATOR.translate("Looter");
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t[I hate them, je vais devoir faire attention à mon or parce que J'AIME l'argeeeeent]";
+		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("LooterDescription")+"]";
 	}
 
 	public void specialeffect(GameCharacters gm) {
 		gm.addGold(-10);
 		this.addGold(10);
-		System.out.println("\t> Le pillard vient de vous volez 10 pièces d'or");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("LooterEffect"));
 	}
 }

@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.actions.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.actions.Action;
@@ -18,10 +19,10 @@ public class LootAction implements Action  {
 			goldWin += gc.getGold();
 		p.addGold(goldWin);
 		r.getDeads().removeAll(r.getDeads());
-		System.out.println("\t> After loot all corpses, you win "+goldWin+" gold coins :)");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("LootWin1")+goldWin+AdventureGame.TRANSLATOR.translate("LootWin2")+" :)");
 	}
 
 	public String toString() {
-		return "Loot a corpse";
+		return AdventureGame.TRANSLATOR.translate("Loot");
 	}
 }

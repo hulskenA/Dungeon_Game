@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.actions.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.actions.Action;
 import fil.coo.adventure.places.Room;
@@ -11,12 +12,12 @@ public class SuicideAction implements Action {
 	}
 
 	public void doneByIn(Player p, Room r) {
-		System.out.println("\t> Vous n'avez pas eu le courage de survivre ici, du coup vous vous êtes tranché la gorge avec votre épée...");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("SuicideEffect"));
 		p.die();
 	}
 
 	public String toString() {
-		return "Suicide";
+		return AdventureGame.TRANSLATOR.translate("Suicide");
 	}
 
 }

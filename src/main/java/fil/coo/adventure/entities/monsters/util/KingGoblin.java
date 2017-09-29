@@ -3,6 +3,7 @@ package fil.coo.adventure.entities.monsters.util;
 
 import java.util.Random;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.monsters.Monster;
 
@@ -12,20 +13,20 @@ public class KingGoblin extends Monster {
 	}
 	
 	public String name() {
-		return "KingGoblin";
+		return AdventureGame.TRANSLATOR.translate("KingGoblin");
 	}
 	
 	public void specialeffect(GameCharacters gm) {
 		Random r = new Random();
 		if (r.nextBoolean()) {
 			gm.currentRoom().addCharacter(new Goblin());
-			System.out.println("Oh non ce monstre viens de faire appelle à l'un de ces sujets");
+			System.out.println(AdventureGame.TRANSLATOR.translate("KingGoblinEffect"));
 		}
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t[Encore plus grand, encore plus gros, encore moins de savoir vivre... Et oui c'est bien le roi des Goblins";
+		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("KingGoblinDescription")+"]";
 	}
 
 }

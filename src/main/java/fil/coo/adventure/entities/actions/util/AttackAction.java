@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.actions.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.GameCharacters;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.actions.Action;
@@ -16,19 +17,19 @@ public class AttackAction implements Action {
 	public void doneByIn(Player p, Room r) {
 		if (!r.isDiscoverd()) {
 			p.loseLife(5);
-			System.out.println("\t> Vous faite des moulinés avec votre épée dans le noire et comme vous n'êtes vraiment pas une lumière vous avez réussi à vous cognier la tête avec.\n\t> You lost 5 Life points... *Asshole*");
+			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("AttackActionWhenItsDark"));
 		} else {
 			/* We let the player choose will monster he wants to attack */
-			GameCharacters m = ListChoser.chose("Who will you attack?", r.getCharacters());
+			GameCharacters m = ListChoser.chose(AdventureGame.TRANSLATOR.translate("AttackActionAsk"), r.getCharacters());
 			/* We attack the monster */
 			if (m != null)
 				p.attack(m);
 			else
-				System.out.println("\t> Vous n'êtes qu'un couard, vous n'ôsez attaquer personne");
+				System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("AttackActionAborded"));
 		}
 	}
 	
 	public String toString() {
-		return "Attack";
+		return AdventureGame.TRANSLATOR.translate("Attack");
 	}
 }

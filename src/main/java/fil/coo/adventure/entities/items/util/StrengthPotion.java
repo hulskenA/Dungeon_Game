@@ -1,5 +1,6 @@
 package fil.coo.adventure.entities.items.util;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.items.Item;
 
@@ -11,16 +12,16 @@ public class StrengthPotion extends Item {
 	public void isUsedBy(Player player) {
 		player.addStrength(st);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> You win "+st+"Strength points");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+st+" "+AdventureGame.TRANSLATOR.translate("StrengthPoints"));
 	}
 	
 	public String toString() {
-		return "StrengthPotion : "+st+" SP";
+		return AdventureGame.TRANSLATOR.translate("StrengthPotion")+" : "+st+" "+AdventureGame.TRANSLATOR.translate("SP");
 	}
 
 	@Override
 	public String description() {
-		return "Strength potion \n\t[C'est une petite fiole bleu de forme cônique avec une tête de mort dessus]";
+		return AdventureGame.TRANSLATOR.translate("StrengthPotion")+" \n\t["+AdventureGame.TRANSLATOR.translate("StrengthPotionDescription")+"]";
 	}
 
 }

@@ -2,13 +2,14 @@ package fil.coo.adventure.places;
 
 import java.util.Random;
 
+import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.util.Lookable;
 
 public enum Direction implements Lookable {
-	N("North"),
-	S("South"),
-	E("East"),
-	W("West");
+	N(AdventureGame.TRANSLATOR.translate("North")),
+	S(AdventureGame.TRANSLATOR.translate("South")),
+	E(AdventureGame.TRANSLATOR.translate("East")),
+	W(AdventureGame.TRANSLATOR.translate("West"));
 	
 	private String name;
 	
@@ -40,6 +41,6 @@ public enum Direction implements Lookable {
 	}
 
 	public String description() {
-		return "A gate in "+this.toString();
+		return AdventureGame.TRANSLATOR.translate("AGate")+this.toString();
 	}
 }

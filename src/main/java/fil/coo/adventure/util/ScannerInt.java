@@ -2,6 +2,8 @@ package fil.coo.adventure.util;
 
 import java.util.*;
 
+import fil.coo.adventure.AdventureGame;
+
 public class ScannerInt {
 	private static final Scanner scanner = new Scanner(System.in);
 
@@ -13,9 +15,18 @@ public class ScannerInt {
 	 * @return the valid read input 
 	 */
 	public static int readInt(int n) {
+		return readInt(n, false);
+	}
+	
+	public static int readInt(int n, boolean isForLangages) {
 		int input = -1;
 		while (input < 0 || input >= n) {
-			System.out.print("\nyour choice (0-" + (n - 1) + ") ? ");
+			String yourChoice;
+			if (isForLangages)
+				yourChoice=new String();
+			else
+				yourChoice=AdventureGame.TRANSLATOR.translate("YourChoice");
+			System.out.print("\n"+yourChoice+" (0-" + (n - 1) + ") ? ");
 			try {
 				input = scanner.nextInt();
 			} catch (InputMismatchException	 e){
@@ -24,13 +35,6 @@ public class ScannerInt {
 			}
 		} 
 		return input;
-	}
-
-	
-	public static void main(String[] args) {
-		System.out.print("Enter an int from 0 to 5 : ");
-		int j = ScannerInt.readInt(6);
-		System.out.println("you typed : " + j);
 	}
 
 }
