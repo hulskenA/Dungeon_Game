@@ -11,9 +11,9 @@ import fil.coo.adventure.util.ListChoser;
 public class Translator {
 	private final Properties prop = new Properties();
 	private final Langages LANG = ListChoser.chose("Choose your Langage", Langages.allLangages(), true);
-	
+
 	private InputStream input;
-	
+
 	public Translator() {
 		InputStream input = null;
 
@@ -23,18 +23,18 @@ public class Translator {
 
 			// load a properties file
 			prop.load(input);
-			
+
 			System.out.println(this.translate("YourLANGchoice"));
 
 		} catch (final IOException ex) {
 			ex.printStackTrace();
 		}
 	}
-	
+
 	public String translate(String str) {
 		return prop.getProperty(str);
 	}
-	
+
 	public void close() {
 		if(this.input!=null){
 			try {

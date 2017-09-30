@@ -21,7 +21,7 @@ public class Slime extends Monster {
 	public void specialeffect(GameCharacters gm) {
 		gm.addStrength(5);
 		gm.loseLife(-5);
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("SlimeEffect1")+gm.name()+AdventureGame.TRANSLATOR.translate("SlimeEffect2"));
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("SlimeEffect1")+" "+gm.name()+" "+AdventureGame.TRANSLATOR.translate("SlimeEffect2"));
 	}
 	
 	public void die() {

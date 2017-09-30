@@ -27,7 +27,7 @@ public class OneArmedBandit extends Item {
 			Item item = possible.get(index);
 			this.currentRoom().addItem(item);
 			this.currentRoom().removeItem(this);
-			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+item.toString());
+			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("OneArmedBanditEffect")+" "+item.toString());
 		}
 	}
 	

@@ -19,7 +19,7 @@ public class LootAction implements Action  {
 			goldWin += gc.getGold();
 		p.addGold(goldWin);
 		r.getDeads().removeAll(r.getDeads());
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("LootWin1")+goldWin+AdventureGame.TRANSLATOR.translate("LootWin2")+" :)");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("LootWin1")+" "+goldWin+" "+AdventureGame.TRANSLATOR.translate("LootWin2")+" :)");
 	}
 
 	public String toString() {

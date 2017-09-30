@@ -36,7 +36,7 @@ public class Player extends GameCharacters {
 	@Override
 	public void attack(GameCharacters theOtherCharacterToAttack) {
 		theOtherCharacterToAttack.loseLife(this.getStrength());
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("ItLost")+this.getStrength()+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("ItLost")+" "+this.getStrength()+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
 		if (theOtherCharacterToAttack.isAlive()) {
 			theOtherCharacterToAttack.attack(this);
 		} else {

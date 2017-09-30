@@ -12,7 +12,7 @@ public class StrengthPotion extends Item {
 	public void isUsedBy(Player player) {
 		player.addStrength(st);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+st+" "+AdventureGame.TRANSLATOR.translate("StrengthPoints"));
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+" "+st+" "+AdventureGame.TRANSLATOR.translate("StrengthPoints"));
 	}
 	
 	public String toString() {

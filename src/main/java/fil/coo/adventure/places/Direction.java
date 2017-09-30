@@ -41,6 +41,6 @@ public enum Direction implements Lookable {
 	}
 
 	public String description() {
-		return AdventureGame.TRANSLATOR.translate("AGate")+this.toString();
+		return AdventureGame.TRANSLATOR.translate("AGate")+" "+this.toString();
 	}
 }

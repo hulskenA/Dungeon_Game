@@ -12,7 +12,7 @@ public class LifePotion extends Item {
 	public void isUsedBy(Player player) {
 		player.loseLife(-this.lp);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+this.lp+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+" "+this.lp+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
 	}
 	
 	public String toString() {

@@ -5,15 +5,15 @@ import java.util.List;
 
 
 public enum Langages {
-	Fr("french"),
+	Fr("français"),
 	En("english");
-	
+
 	private String name;
-	
+
 	private Langages(String name) {
 		this.name = name;
 	}
-	
+
 	public String toString() {
 		return this.name;
 	}

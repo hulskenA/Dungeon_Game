@@ -20,6 +20,6 @@ public class ZombiesHord extends Monster {
 
 	public void specialeffect(GameCharacters gm) {
 		this.loseLife(-this.getStrength());
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("ZombiesHordEffect1")+this.getStrength()+AdventureGame.TRANSLATOR.translate("ZombiesHordEffect2"));
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("ZombiesHordEffect1")+" "+this.getStrength()+" "+AdventureGame.TRANSLATOR.translate("ZombiesHordEffect2"));
 	}
 }

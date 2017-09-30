@@ -16,7 +16,7 @@ public class GoldChest extends Item {
 	public void isUsedBy(Player player) {
 		player.addGold(this.gold);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+this.gold+" gold coins");
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+" "+this.gold+" gold coins");
 	}
 
 	public String name() {
@@ -24,7 +24,7 @@ public class GoldChest extends Item {
 	}
 
 	public String toString() {
-		return this.name()+" : "+this.gold+AdventureGame.TRANSLATOR.translate("GoldCoins");
+		return this.name()+" : "+this.gold+" "+AdventureGame.TRANSLATOR.translate("GoldCoins");
 	}
 
 	@Override
