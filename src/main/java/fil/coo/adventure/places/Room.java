@@ -145,6 +145,7 @@ public class Room implements Lookable {
 			tmp2.addItem(new StrengthPotion());
 		for (int i = 0; i<2; i++)
 			tmp2.addItem(new LifePotion());
+		tmp2.addItem(new SleepedBadChest());
 		tmp2.addCharacter(new Kraken());
 		tmp2.addCharacter(new Dragon());
 		tmp2.addCharacter(new Balrog());

@@ -16,7 +16,7 @@ public class UseAction implements Action {
 
 	public void doneByIn(Player p, Room r) {
 		/* We let the player choose will item he wants to use */
-		Item i = ListChoser.chose(AdventureGame.TRANSLATOR.translate("UesAsk"), r.getItems());
+		Item i = ListChoser.chose(AdventureGame.TRANSLATOR.translate("UseAsk"), r.getItems());
 		/* We use the item */
 		if (i == null) {
 			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("UseAborded"));

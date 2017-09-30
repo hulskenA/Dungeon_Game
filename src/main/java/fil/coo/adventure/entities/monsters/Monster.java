@@ -17,7 +17,7 @@ public abstract class Monster extends GameCharacters {
 	@Override
 	public void attack(GameCharacters theOtherCharacterToAttack) {
 		theOtherCharacterToAttack.loseLife(this.getStrength());
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("ItRipostes")+" "+theOtherCharacterToAttack.getStrength()+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
+		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("ItRipostes")+" "+this.getStrength()+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
 		this.specialeffect(theOtherCharacterToAttack);
 		if (theOtherCharacterToAttack.isAlive())
 			System.out.println("\n\t> "+AdventureGame.TRANSLATOR.translate("Now")+" "+theOtherCharacterToAttack.getLifePoints()+" "+AdventureGame.TRANSLATOR.translate("LP")+"\n\t> "+AdventureGame.TRANSLATOR.translate("ItHave")+" "+this.getLifePoints()+" "+AdventureGame.TRANSLATOR.translate("LP"));
