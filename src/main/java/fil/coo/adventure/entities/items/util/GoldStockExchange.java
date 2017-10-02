@@ -9,12 +9,12 @@ public class GoldStockExchange extends GoldChest {
 	}
 	
 	public String name() {
-		return AdventureGame.TRANSLATOR.translate("GoldStockExchange");
+		return AdventureGame.translator.translate("GoldStockExchange");
 	}
 
 	@Override
 	public String description() {
-		return AdventureGame.TRANSLATOR.translate("GoldStockExchange")+"\n\t["+AdventureGame.TRANSLATOR.translate("GoldStockExchangeDescription")+"]";
+		return AdventureGame.translator.translate("GoldStockExchange")+"\n\t["+AdventureGame.translator.translate("GoldStockExchangeDescription")+"]";
 	}
 
 }

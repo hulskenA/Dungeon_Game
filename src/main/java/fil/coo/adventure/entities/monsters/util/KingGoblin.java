@@ -1,32 +1,31 @@
 
 package fil.coo.adventure.entities.monsters.util;
 
-import java.util.Random;
+
 
 import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.GameCharacters;
-import fil.coo.adventure.entities.monsters.Monster;
+import fil.coo.adventure.entities.monsters.SpecialMonsterAttack;
 
-public class KingGoblin extends Monster {
+public class KingGoblin extends SpecialMonsterAttack {
 	public KingGoblin() {
 		super(30, 5);
 	}
 	
+	@Override
 	public String name() {
-		return AdventureGame.TRANSLATOR.translate("KingGoblin");
+		return AdventureGame.translator.translate("KingGoblin");
 	}
 	
-	public void specialeffect(GameCharacters gm) {
-		Random r = new Random();
-		if (r.nextBoolean()) {
-			gm.currentRoom().addCharacter(new Goblin());
-			System.out.println(AdventureGame.TRANSLATOR.translate("KingGoblinEffect"));
-		}
+	@Override
+	public void specialeffect(GameCharacters gm) {		
+		gm.currentRoom().addCharacter(new Goblin());
+		System.out.println(AdventureGame.translator.translate("KingGoblinEffect"));
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("KingGoblinDescription")+"]";
+		return this.name()+"\n\t["+AdventureGame.translator.translate("KingGoblinDescription")+"]";
 	}
 
 }

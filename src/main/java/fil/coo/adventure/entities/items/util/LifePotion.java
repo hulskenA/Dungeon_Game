@@ -12,16 +12,16 @@ public class LifePotion extends Item {
 	public void isUsedBy(Player player) {
 		player.loseLife(-this.lp);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+" "+this.lp+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
+		System.out.println("\t> "+AdventureGame.translator.translate("YouWin")+" "+this.lp+" "+AdventureGame.translator.translate("LifePoints"));
 	}
 	
 	public String toString() {
-		return AdventureGame.TRANSLATOR.translate("LifePotion")+" : "+this.lp+" "+AdventureGame.TRANSLATOR.translate("LP");
+		return AdventureGame.translator.translate("LifePotion")+" : "+this.lp+" "+AdventureGame.translator.translate("LP");
 	}
 
 	@Override
 	public String description() {
-		return AdventureGame.TRANSLATOR.translate("LifePotion")+"\n\t["+AdventureGame.TRANSLATOR.translate("LifePotionDescription")+"]";
+		return AdventureGame.translator.translate("LifePotion")+"\n\t["+AdventureGame.translator.translate("LifePotionDescription")+"]";
 	}
 
 }

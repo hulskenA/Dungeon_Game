@@ -17,19 +17,19 @@ public class AttackAction implements Action {
 	public void doneByIn(Player p, Room r) {
 		if (!r.isDiscoverd()) {
 			p.loseLife(5);
-			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("AttackActionWhenItsDark"));
+			System.out.println("\t> "+AdventureGame.translator.translate("AttackActionWhenItsDark"));
 		} else {
 			/* We let the player choose will monster he wants to attack */
-			GameCharacters m = ListChoser.chose(AdventureGame.TRANSLATOR.translate("AttackActionAsk"), r.getCharacters());
+			GameCharacters m = ListChoser.chose(AdventureGame.translator.translate("AttackActionAsk"), r.getCharacters());
 			/* We attack the monster */
 			if (m != null)
 				p.attack(m);
 			else
-				System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("AttackActionAborded"));
+				System.out.println("\t> "+AdventureGame.translator.translate("AttackActionAborded"));
 		}
 	}
 	
 	public String toString() {
-		return AdventureGame.TRANSLATOR.translate("Attack");
+		return AdventureGame.translator.translate("Attack");
 	}
 }

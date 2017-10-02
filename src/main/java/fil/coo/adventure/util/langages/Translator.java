@@ -5,24 +5,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import fil.coo.adventure.util.ListChoser;
-
 
 public class Translator {
-	private final Properties prop = new Properties();
-	private final Langages LANG = ListChoser.chose("Choose your Langage", Langages.allLangages(), true);
-
+	private final Properties PROP = new Properties();
 	private InputStream input;
 
-	public Translator() {
+	public Translator(Langages lang) {
 		InputStream input = null;
 
 		try {
 
-			input = new FileInputStream(LANG.toString()+".properties");
+			input = new FileInputStream(lang.toString()+".properties");
 
 			// load a properties file
-			prop.load(input);
+			PROP.load(input);
 
 			System.out.println(this.translate("YourLANGchoice"));
 
@@ -32,7 +28,7 @@ public class Translator {
 	}
 
 	public String translate(String str) {
-		return prop.getProperty(str);
+		return PROP.getProperty(str);
 	}
 
 	public void close() {

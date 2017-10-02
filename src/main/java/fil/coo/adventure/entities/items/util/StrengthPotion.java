@@ -12,16 +12,16 @@ public class StrengthPotion extends Item {
 	public void isUsedBy(Player player) {
 		player.addStrength(st);
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("YouWin")+" "+st+" "+AdventureGame.TRANSLATOR.translate("StrengthPoints"));
+		System.out.println("\t> "+AdventureGame.translator.translate("YouWin")+" "+st+" "+AdventureGame.translator.translate("StrengthPoints"));
 	}
 	
 	public String toString() {
-		return AdventureGame.TRANSLATOR.translate("StrengthPotion")+" : "+st+" "+AdventureGame.TRANSLATOR.translate("SP");
+		return AdventureGame.translator.translate("StrengthPotion")+" : "+st+" "+AdventureGame.translator.translate("SP");
 	}
 
 	@Override
 	public String description() {
-		return AdventureGame.TRANSLATOR.translate("StrengthPotion")+" \n\t["+AdventureGame.TRANSLATOR.translate("StrengthPotionDescription")+"]";
+		return AdventureGame.translator.translate("StrengthPotion")+" \n\t["+AdventureGame.translator.translate("StrengthPotionDescription")+"]";
 	}
 
 }

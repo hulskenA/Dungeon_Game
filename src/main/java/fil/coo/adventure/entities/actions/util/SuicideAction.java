@@ -12,12 +12,12 @@ public class SuicideAction implements Action {
 	}
 
 	public void doneByIn(Player p, Room r) {
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("SuicideEffect"));
+		System.out.println("\t> "+AdventureGame.translator.translate("SuicideEffect"));
 		p.die();
 	}
 
 	public String toString() {
-		return AdventureGame.TRANSLATOR.translate("Suicide");
+		return AdventureGame.translator.translate("Suicide");
 	}
 
 }

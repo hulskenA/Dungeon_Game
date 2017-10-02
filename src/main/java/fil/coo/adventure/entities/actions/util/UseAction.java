@@ -16,10 +16,10 @@ public class UseAction implements Action {
 
 	public void doneByIn(Player p, Room r) {
 		/* We let the player choose will item he wants to use */
-		Item i = ListChoser.chose(AdventureGame.TRANSLATOR.translate("UseAsk"), r.getItems());
+		Item i = ListChoser.chose(AdventureGame.translator.translate("UseAsk"), r.getItems());
 		/* We use the item */
 		if (i == null) {
-			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("UseAborded"));
+			System.out.println("\t> "+AdventureGame.translator.translate("UseAborded"));
 		}
 		else {
 			i.isUsedBy(p);
@@ -28,6 +28,6 @@ public class UseAction implements Action {
 
 
 	public String toString() {
-		return AdventureGame.TRANSLATOR.translate("Use");
+		return AdventureGame.translator.translate("Use");
 	}
 }

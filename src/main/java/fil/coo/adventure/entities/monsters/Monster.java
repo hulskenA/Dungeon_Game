@@ -17,23 +17,22 @@ public abstract class Monster extends GameCharacters {
 	@Override
 	public void attack(GameCharacters theOtherCharacterToAttack) {
 		theOtherCharacterToAttack.loseLife(this.getStrength());
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("ItRipostes")+" "+this.getStrength()+" "+AdventureGame.TRANSLATOR.translate("LifePoints"));
-		this.specialeffect(theOtherCharacterToAttack);
+		System.out.println("\t> "+AdventureGame.translator.translate("ItRipostes")+" "+this.getStrength()+" "+AdventureGame.translator.translate("LifePoints"));
 		if (theOtherCharacterToAttack.isAlive())
-			System.out.println("\n\t> "+AdventureGame.TRANSLATOR.translate("Now")+" "+theOtherCharacterToAttack.getLifePoints()+" "+AdventureGame.TRANSLATOR.translate("LP")+"\n\t> "+AdventureGame.TRANSLATOR.translate("ItHave")+" "+this.getLifePoints()+" "+AdventureGame.TRANSLATOR.translate("LP"));
+			System.out.println("\n\t> "+AdventureGame.translator.translate("Now")+" "+theOtherCharacterToAttack.getLifePoints()+" "+AdventureGame.translator.translate("LP")+"\n\t> "+AdventureGame.translator.translate("ItHave")+" "+this.getLifePoints()+" "+AdventureGame.translator.translate("LP"));
 		else
 			theOtherCharacterToAttack.die();
 	}
 	
 	public void die() {
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("MonsterDie")+" !!! :D");
+		System.out.println("\t> "+AdventureGame.translator.translate("MonsterDie")+" !!! :D");
 		this.currentRoom().removeCharacter(this);
 		this.currentRoom().addDead(this);
 	}
 	
 	public String toString() {
-		return this.name()+" : "+AdventureGame.TRANSLATOR.translate("LP")+":"+this.getLifePoints()+", "+AdventureGame.TRANSLATOR.translate("SP")+": "+this.getStrength();
+		return this.name()+" : "+AdventureGame.translator.translate("LP")+":"+this.getLifePoints()+", "+AdventureGame.translator.translate("SP")+": "+this.getStrength();
 	}
 	
-	public void specialeffect(GameCharacters gm) {}
+	
 }

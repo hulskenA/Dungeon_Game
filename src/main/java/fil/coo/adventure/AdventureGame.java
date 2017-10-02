@@ -10,11 +10,11 @@ import fil.coo.adventure.util.ListChoser;
 import fil.coo.adventure.util.langages.Translator;
 
 public class AdventureGame {
-	public static final Translator TRANSLATOR = new Translator();
-
+	public static Translator translator;
+	
 	private Player player;
 
-	public AdventureGame(Room startingRoom,Player player) {
+	public AdventureGame(Room startingRoom, Player player) {
 		this.player = player;
 		this.player.moveTo(startingRoom);
 	}
@@ -24,7 +24,7 @@ public class AdventureGame {
 	}
 
 	public void play() {
-		System.out.println(AdventureGame.TRANSLATOR.translate("Welcome"));
+		System.out.println(AdventureGame.translator.translate("Welcome"));
 
 		while(!this.isFinished()) {
 			System.out.println("\n\n------------------------------------------------");
@@ -43,23 +43,23 @@ public class AdventureGame {
 					possibleActions.add(a);
 			System.out.println("------------------------------------------------\n");
 			/* We let the player select an action to perform */
-			Action a = ListChoser.chose(AdventureGame.TRANSLATOR.translate("AdventureGameAsk"),possibleActions);
+			Action a = ListChoser.chose(AdventureGame.translator.translate("AdventureGameAsk"),possibleActions);
 			if (a==null)
-				System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("AdventureGameAborded"));
+				System.out.println("\t> "+AdventureGame.translator.translate("AdventureGameAborded"));
 			else {
 				/* We perform the action */
 				a.doneByIn(this.getPlayer(), this.player.currentRoom());
 			}
 		}
-		
-		if (this.player.isAlive())
-			System.out.println(AdventureGame.TRANSLATOR.translate("FINISH"));
 
-		TRANSLATOR.close();
+		if (this.player.isAlive())
+			System.out.println(AdventureGame.translator.translate("FINISH")+" "+this.player.getscore()+"\n");
+
+		AdventureGame.translator.close();
 	}
 
 	private boolean isFinished() {
-		return (!this.getPlayer().isAlive()) || (this.player.currentRoom().isExit());
+		return (!this.getPlayer().isAlive()) || (this.player.currentRoom().isExit() && this.player.currentRoom().getCharacters().isEmpty());
 	}
 
 	// A finished game function that handles the end.

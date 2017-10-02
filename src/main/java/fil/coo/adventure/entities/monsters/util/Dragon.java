@@ -8,12 +8,13 @@ public class Dragon extends Monster {
 		super(100, 25);
 	}
 	
+	@Override
 	public String name() {
-		return AdventureGame.TRANSLATOR.translate("Dragon");
+		return AdventureGame.translator.translate("Dragon");
 	}
 	
 	@Override
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("DragonDescription")+"]";
+		return this.name()+"\n\t["+AdventureGame.translator.translate("DragonDescription")+"]";
 	}
 }

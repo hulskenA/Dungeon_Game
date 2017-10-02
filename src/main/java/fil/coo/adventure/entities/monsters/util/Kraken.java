@@ -8,12 +8,13 @@ public class Kraken extends Monster {
 		super(60, 15);
 	}
 	
+	@Override
 	public String name() {
-		return AdventureGame.TRANSLATOR.translate("Kraken");
+		return AdventureGame.translator.translate("Kraken");
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("KrakenDescription")+"]";
+		return this.name()+"\n\t["+AdventureGame.translator.translate("KrakenDescription")+"]";
 	}
 }

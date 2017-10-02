@@ -6,10 +6,10 @@ import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.util.Lookable;
 
 public enum Direction implements Lookable {
-	N(AdventureGame.TRANSLATOR.translate("North")),
-	S(AdventureGame.TRANSLATOR.translate("South")),
-	E(AdventureGame.TRANSLATOR.translate("East")),
-	W(AdventureGame.TRANSLATOR.translate("West"));
+	N(AdventureGame.translator.translate("North")),
+	S(AdventureGame.translator.translate("South")),
+	E(AdventureGame.translator.translate("East")),
+	W(AdventureGame.translator.translate("West"));
 	
 	private String name;
 	
@@ -41,6 +41,6 @@ public enum Direction implements Lookable {
 	}
 
 	public String description() {
-		return AdventureGame.TRANSLATOR.translate("AGate")+" "+this.toString();
+		return AdventureGame.translator.translate("AGate")+" "+this.toString();
 	}
 }

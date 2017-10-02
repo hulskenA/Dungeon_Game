@@ -20,16 +20,16 @@ public class MoveAction implements Action {
 	public void doneByIn(Player p, Room r) {
 		List<Direction> directions = new ArrayList<Direction>();
 		directions.addAll(r.getPossibleDirections());
-		Direction d = ListChoser.chose(AdventureGame.TRANSLATOR.translate("MoveAsk"),directions);
+		Direction d = ListChoser.chose(AdventureGame.translator.translate("MoveAsk"),directions);
 		if (d == null) {
-			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("MoveRest"));
+			System.out.println("\t> "+AdventureGame.translator.translate("MoveRest"));
 		} else {
-			System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("MoveNextRoom"));
+			System.out.println("\t> "+AdventureGame.translator.translate("MoveNextRoom"));
 			p.moveTo(r.getNeighbour(d));
 		}
 	}
 
 	public String toString() {
-		return AdventureGame.TRANSLATOR.translate("Move");
+		return AdventureGame.translator.translate("Move");
 	}
 }

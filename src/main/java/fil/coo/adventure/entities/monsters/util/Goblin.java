@@ -8,12 +8,13 @@ public class Goblin extends Monster {
 		super(15, 5);
 	}
 	
+	@Override
 	public String name() {
-		return AdventureGame.TRANSLATOR.translate("Goblin");
+		return AdventureGame.translator.translate("Goblin");
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("GoblinDescription")+"]";
+		return this.name()+"\n\t["+AdventureGame.translator.translate("GoblinDescription")+"]";
 	}
 }

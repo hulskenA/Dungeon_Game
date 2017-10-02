@@ -17,15 +17,15 @@ import fil.coo.adventure.util.Lookable;
 
 public class Room implements Lookable {
 	private static ArrayList<String> descriptions = new ArrayList<String>(); {{
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription1"));
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription2"));
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription3"));
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription4"));
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription5"));
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription6"));
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription7"));
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription8"));
-		descriptions.add(AdventureGame.TRANSLATOR.translate("RoomDescription9"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription1"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription2"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription3"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription4"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription5"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription6"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription7"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription8"));
+		descriptions.add(AdventureGame.translator.translate("RoomDescription9"));
 	}}
 
 	protected List<GameCharacters> characters;
@@ -164,7 +164,7 @@ public class Room implements Lookable {
 	}
 
 	public String toString() {
-		return AdventureGame.TRANSLATOR.translate("RoomToString");
+		return AdventureGame.translator.translate("RoomToString");
 	}
 
 	public String description() {

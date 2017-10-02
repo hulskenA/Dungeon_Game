@@ -8,12 +8,13 @@ public class Balrog extends Monster {
 		super(80, 25);
 	}
 	
+	@Override
 	public String name() {
-		return "Balrog";
+		return AdventureGame.translator.translate("Balrog");
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("BalrogDescription")+"]";
+		return this.name()+"\n\t["+AdventureGame.translator.translate("BalrogDescription")+"]";
 	}
 }

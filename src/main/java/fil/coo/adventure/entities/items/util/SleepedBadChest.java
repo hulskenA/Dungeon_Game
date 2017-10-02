@@ -9,7 +9,7 @@ public class SleepedBadChest extends GoldChest {
 	public void isUsedBy(Player player) {
 		this.currentRoom().addCharacter(new BadChest());
 		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.TRANSLATOR.translate("SleepedBadGoldChestEffect"));
+		System.out.println("\t> "+AdventureGame.translator.translate("SleepedBadGoldChestEffect"));
 	}
 	
 }

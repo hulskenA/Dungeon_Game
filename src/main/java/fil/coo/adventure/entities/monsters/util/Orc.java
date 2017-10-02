@@ -8,12 +8,13 @@ public class Orc extends Monster {
 		super(40, 10);
 	}
 	
+	@Override
 	public String name() {
-		return AdventureGame.TRANSLATOR.translate("Orc");
+		return AdventureGame.translator.translate("Orc");
 	}
 
 	@Override
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.TRANSLATOR.translate("OrcDescription")+"]";
+		return this.name()+"\n\t["+AdventureGame.translator.translate("OrcDescription")+"]";
 	}
 }

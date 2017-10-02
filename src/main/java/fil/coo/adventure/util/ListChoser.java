@@ -22,7 +22,7 @@ public class ListChoser {
 		System.out.println(msg);
 		int cpt = 0;
 		if (!isForLangages) {
-			System.out.println("\t[0] "+AdventureGame.TRANSLATOR.translate("donothing"));
+			System.out.println("\t[0] "+AdventureGame.translator.translate("donothing"));
 			cpt = 1;
 		}
 		for (T item : items) {
