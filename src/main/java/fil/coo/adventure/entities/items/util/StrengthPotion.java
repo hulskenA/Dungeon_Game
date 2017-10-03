@@ -1,27 +1,34 @@
 package fil.coo.adventure.entities.items.util;
 
-import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.items.Item;
+import fil.coo.adventure.util.langages.Translator;
 
-public class StrengthPotion extends Item {
+/**
+ * This class represents the strength potion item. This item gives 
+ * exactly 15 strength points to the player when used.
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
+public class StrengthPotion implements Item {
 	
 	protected int st = 15;
 
-	@Override
+	/**
+	 * See Item interface documentation
+	 */
 	public void isUsedBy(Player player) {
 		player.addStrength(st);
-		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.translator.translate("YouWin")+" "+st+" "+AdventureGame.translator.translate("StrengthPoints"));
+		player.currentRoom().removeItem(this);
+		System.out.println("\t> "+Translator.translate("YouWin")+" "+st+" "+Translator.translate("StrengthPoints"));
 	}
 	
 	public String toString() {
-		return AdventureGame.translator.translate("StrengthPotion")+" : "+st+" "+AdventureGame.translator.translate("SP");
+		return Translator.translate("StrengthPotion")+" : "+st+" "+Translator.translate("SP");
 	}
 
-	@Override
 	public String description() {
-		return AdventureGame.translator.translate("StrengthPotion")+" \n\t["+AdventureGame.translator.translate("StrengthPotionDescription")+"]";
+		return Translator.translate("StrengthPotion")+" \n\t["+Translator.translate("StrengthPotionDescription")+"]";
 	}
 
 }

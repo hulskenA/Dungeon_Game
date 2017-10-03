@@ -1,39 +1,47 @@
 package fil.coo.adventure.entities.monsters.util;
 
-import fil.coo.adventure.AdventureGame;
-import fil.coo.adventure.entities.GameCharacters;
-import fil.coo.adventure.entities.monsters.Monster;
+import fil.coo.adventure.entities.GameCharacter;
 import fil.coo.adventure.entities.monsters.SpecialMonsterDie;
+import fil.coo.adventure.util.langages.Translator;
 
-public class Slime extends Monster implements SpecialMonsterDie {
-	public Slime() {
-		super(5, 0);
+/**
+ * This class represents the Slime monster :
+ * The slime a special monster, in the sense of it's death is different than
+ * that of a regular monster.
+ * When the slime dies, it being a radioactive compound, it's goo sticks to a
+ * random monster in the room and gives it +5 life and strength points.
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
+public class Slime extends SpecialMonsterDie {
+	public Slime(int lp,int sp) {
+		super(lp, sp);
 	}
 	
 	@Override
 	public String name() {
-		return AdventureGame.translator.translate("Slime");
+		return Translator.translate("Slime");
 	}
 
 	@Override
+	/**
+	 * See Lookable interface documentation
+	 */
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.translator.translate("SlimeDescription")+"]";
+		return this.name()+"\n\t["+Translator.translate("SlimeDescription")+"]";
 	}
 
 	@Override
-	public void specialeffect() {
-		GameCharacters gm;
+	/**
+	 * See SpecialMonster&SpecialMonsterDie documentation
+	 */
+	public void onDieEffect() {
+		GameCharacter gm;
 		if (!this.currentRoom().getCharacters().isEmpty()) {
 			gm = this.currentRoom().alea();
 			gm.addStrength(5);
 			gm.loseLife(-5);
-			System.out.println("\t> "+AdventureGame.translator.translate("SlimeEffect1")+" "+gm.name()+" "+AdventureGame.translator.translate("SlimeEffect2"));
+			System.out.println("\t> "+Translator.translate("SlimeEffect1")+" "+gm.name()+" "+Translator.translate("SlimeEffect2"));
 		}
-	}
-
-	@Override
-	public void die() {
-		super.die();
-		this.specialeffect();
 	}
 }

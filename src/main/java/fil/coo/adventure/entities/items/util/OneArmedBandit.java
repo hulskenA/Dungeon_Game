@@ -4,11 +4,19 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
-import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.items.Item;
+import fil.coo.adventure.util.langages.Translator;
 
-public class OneArmedBandit extends Item {
+/**
+ * This class represents the one-armed bandit item. This item spits out a random
+ * item from those contained in its POSSIBLES (List<Item>) list of items. The one-
+ * armed bandit drops the item on the ground of the room in which it is used. It 
+ * also requires the user to have at least 100 gold in order to use. 
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
+public class OneArmedBandit implements Item {
 
 	protected int price = 100;
 	private static final List<Item> POSSIBLES = new ArrayList<Item>(); {{
@@ -18,27 +26,29 @@ public class OneArmedBandit extends Item {
 		POSSIBLES.add(new StrengthPotion());
 	}}
 
-	@Override
+	/**
+	 * See Item interface documentation
+	 */
 	public void isUsedBy(Player player) {
 		if (player.getGold() < price)
-			System.out.println("\t> "+AdventureGame.translator.translate("OneArmedBanditDontUsable1")+(price-player.getGold())+AdventureGame.translator.translate("OneArmedBanditDontUsable2"));
+			System.out.println("\t> "+Translator.translate("OneArmedBanditDontUsable1")+(price-player.getGold())+Translator.translate("OneArmedBanditDontUsable2"));
 		else {
 			Random r = new Random();
 			int index = r.nextInt(POSSIBLES.size());
 			Item item = POSSIBLES.get(index);
-			this.currentRoom().addItem(item);
-			this.currentRoom().removeItem(this);
-			System.out.println("\t> "+AdventureGame.translator.translate("OneArmedBanditEffect")+" "+item.toString());
+			player.currentRoom().addItem(item);
+			player.addGold(-100);
+			player.currentRoom().removeItem(this);
+			System.out.println("\t> "+Translator.translate("OneArmedBanditEffect")+" "+item.toString());
 		}
 	}
 
 	public String toString() {
-		return AdventureGame.translator.translate("OneArmedBandit")+" : "+price+AdventureGame.translator.translate("OneArmedBanditCost");
+		return Translator.translate("OneArmedBandit")+" : "+price+Translator.translate("OneArmedBanditCost");
 	}
-
-	@Override
+	
 	public String description() {
-		return AdventureGame.translator.translate("OneArmedBandit")+"\n\t[\""+AdventureGame.translator.translate("OneArmedBanditDescription")+"\"]";
+		return Translator.translate("OneArmedBandit")+"\n\t[\""+Translator.translate("OneArmedBanditDescription")+"\"]";
 	}
 
 }

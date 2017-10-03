@@ -2,14 +2,20 @@ package fil.coo.adventure.places;
 
 import java.util.Random;
 
-import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.util.Lookable;
+import fil.coo.adventure.util.langages.Translator;
 
+/**
+ * Defines all possible directions that a player can take 
+ * when wanting to move between the rooms of the dungeon.
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
 public enum Direction implements Lookable {
-	N(AdventureGame.translator.translate("North")),
-	S(AdventureGame.translator.translate("South")),
-	E(AdventureGame.translator.translate("East")),
-	W(AdventureGame.translator.translate("West"));
+	N("North"),
+	S("South"),
+	E("East"),
+	W("West");
 	
 	private String name;
 	
@@ -18,7 +24,7 @@ public enum Direction implements Lookable {
 	}
 	
 	public String toString() {
-		return this.name;
+		return Translator.translate(this.name);
 	}
 	
 	public static Direction alea() {
@@ -40,7 +46,10 @@ public enum Direction implements Lookable {
 		 }
 	}
 
+	/**
+	 * See Lookable interface documentation
+	 */
 	public String description() {
-		return AdventureGame.translator.translate("AGate")+" "+this.toString();
+		return Translator.translate("AGate")+" "+this.toString();
 	}
 }

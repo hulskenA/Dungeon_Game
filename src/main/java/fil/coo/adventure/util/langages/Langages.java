@@ -3,7 +3,12 @@ package fil.coo.adventure.util.langages;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Defines available languages for the player to chose from.
+ * In this case, the player can play in french or english
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
 public enum Langages {
 	Fr("français"),
 	En("english");

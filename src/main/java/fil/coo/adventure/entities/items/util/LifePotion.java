@@ -1,27 +1,34 @@
 package fil.coo.adventure.entities.items.util;
 
-import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.items.Item;
+import fil.coo.adventure.util.langages.Translator;
 
-public class LifePotion extends Item {
+/**
+ * This class represents the life potion item. This item restores exactly
+ * 50 life points when used by the player.
+ * @author ubuntu
+ *
+ */
+public class LifePotion implements Item {
 	
 	protected int lp = 50;
 
-	@Override
+	/**
+	 * See Item interface documentation
+	 */
 	public void isUsedBy(Player player) {
 		player.loseLife(-this.lp);
-		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.translator.translate("YouWin")+" "+this.lp+" "+AdventureGame.translator.translate("LifePoints"));
+		player.currentRoom().removeItem(this);
+		System.out.println("\t> "+Translator.translate("YouWin")+" "+this.lp+" "+Translator.translate("LifePoints"));
 	}
 	
 	public String toString() {
-		return AdventureGame.translator.translate("LifePotion")+" : "+this.lp+" "+AdventureGame.translator.translate("LP");
+		return Translator.translate("LifePotion")+" : "+this.lp+" "+Translator.translate("LP");
 	}
 
-	@Override
 	public String description() {
-		return AdventureGame.translator.translate("LifePotion")+"\n\t["+AdventureGame.translator.translate("LifePotionDescription")+"]";
+		return Translator.translate("LifePotion")+"\n\t["+Translator.translate("LifePotionDescription")+"]";
 	}
 
 }

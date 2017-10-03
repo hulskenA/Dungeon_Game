@@ -7,11 +7,16 @@ import fil.coo.adventure.entities.*;
 import fil.coo.adventure.entities.actions.Action;
 import fil.coo.adventure.places.*;
 import fil.coo.adventure.util.ListChoser;
+import fil.coo.adventure.util.langages.Langages;
 import fil.coo.adventure.util.langages.Translator;
 
+/**
+ * The AdventureGame class, that defines the main loop for our dungeon game
+ * , that is the play method.
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
 public class AdventureGame {
-	public static Translator translator;
-	
 	private Player player;
 
 	public AdventureGame(Room startingRoom, Player player) {
@@ -19,12 +24,28 @@ public class AdventureGame {
 		this.player.moveTo(startingRoom);
 	}
 
+	/**
+	 * Returns the player that is currently playing the adventure game.
+	 * @return The player
+	 */
 	public Player getPlayer() {
 		return this.player;
 	}
 
+	/**
+	 * The stop condition for the main loop of the game.
+	 * @return boolean saying whether the game is over or not.
+	 */
+	private boolean isFinished() {
+		return (!this.getPlayer().isAlive()) || (this.player.currentRoom().isExit() && this.player.currentRoom().getCharacters().isEmpty());
+	}
+	
+	/**
+	 * Defines the main loop for the dungeon game.
+	 */
 	public void play() {
-		System.out.println(AdventureGame.translator.translate("Welcome"));
+		
+		System.out.println(Translator.translate("Welcome"));
 
 		while(!this.isFinished()) {
 			System.out.println("\n\n------------------------------------------------");
@@ -43,24 +64,16 @@ public class AdventureGame {
 					possibleActions.add(a);
 			System.out.println("------------------------------------------------\n");
 			/* We let the player select an action to perform */
-			Action a = ListChoser.chose(AdventureGame.translator.translate("AdventureGameAsk"),possibleActions);
+			Action a = ListChoser.chose(Translator.translate("AdventureGameAsk"),possibleActions);
 			if (a==null)
-				System.out.println("\t> "+AdventureGame.translator.translate("AdventureGameAborded"));
+				System.out.println("\t> "+Translator.translate("AdventureGameAborded"));
 			else {
 				/* We perform the action */
-				a.doneByIn(this.getPlayer(), this.player.currentRoom());
+				a.doneBy(this.getPlayer());
 			}
 		}
 
 		if (this.player.isAlive())
-			System.out.println(AdventureGame.translator.translate("FINISH")+" "+this.player.getscore()+"\n");
-
-		AdventureGame.translator.close();
+			System.out.println(Translator.translate("FINISH")+" "+this.player.getscore()+"\n");
 	}
-
-	private boolean isFinished() {
-		return (!this.getPlayer().isAlive()) || (this.player.currentRoom().isExit() && this.player.currentRoom().getCharacters().isEmpty());
-	}
-
-	// A finished game function that handles the end.
 }

@@ -1,20 +1,29 @@
 package fil.coo.adventure.entities.monsters.util;
 
-import fil.coo.adventure.AdventureGame;
+import fil.coo.adventure.util.langages.Translator;
 import fil.coo.adventure.entities.monsters.Monster;
 
+/**
+ * This class represents the balrog monster :
+ * It is a regular monster.
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
 public class Balrog extends Monster {
-	public Balrog() {
-		super(80, 25);
+	public Balrog(int lp, int sp) {
+		super(lp,sp);
 	}
 	
 	@Override
 	public String name() {
-		return AdventureGame.translator.translate("Balrog");
+		return Translator.translate("Balrog");
 	}
 
 	@Override
+	/**
+	 * See Lookable interface documentation
+	 */
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.translator.translate("BalrogDescription")+"]";
+		return this.name()+"\n\t["+Translator.translate("BalrogDescription")+"]";
 	}
 }

@@ -1,7 +1,7 @@
 package fil.coo.adventure.util;
 
-import fil.coo.adventure.AdventureGame;
 import fil.coo.adventure.util.ScannerInt;
+import fil.coo.adventure.util.langages.Translator;
 
 import java.util.*;
 
@@ -22,7 +22,7 @@ public class ListChoser {
 		System.out.println(msg);
 		int cpt = 0;
 		if (!isForLangages) {
-			System.out.println("\t[0] "+AdventureGame.translator.translate("donothing"));
+			System.out.println("\t[0] "+Translator.translate("donothing"));
 			cpt = 1;
 		}
 		for (T item : items) {

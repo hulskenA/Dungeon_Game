@@ -2,7 +2,7 @@ package fil.coo.adventure.util;
 
 import java.util.*;
 
-import fil.coo.adventure.AdventureGame;
+import fil.coo.adventure.util.langages.Translator;
 
 public class ScannerInt {
 	private static final Scanner SCANNER = new Scanner(System.in);
@@ -25,7 +25,7 @@ public class ScannerInt {
 			if (isForLangages)
 				yourChoice=new String();
 			else
-				yourChoice=AdventureGame.translator.translate("YourChoice");
+				yourChoice=Translator.translate("YourChoice");
 			System.out.print("\n"+yourChoice+" (0-" + (n - 1) + ") ? ");
 			try {
 				input = SCANNER.nextInt();

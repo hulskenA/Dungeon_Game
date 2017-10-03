@@ -1,10 +1,16 @@
 package fil.coo.adventure.entities.items.util;
 
 import fil.coo.adventure.entities.items.Item;
-import fil.coo.adventure.AdventureGame;
+import fil.coo.adventure.util.langages.Translator;
 import fil.coo.adventure.entities.Player;
 
-public class GoldChest extends Item {
+/**
+ * The gold chest class describes an item that is a chest filled with exactly
+ * 100 gold coins, that obtained by the player when he uses it.
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
+public class GoldChest implements Item {
 
 	protected int gold;
 
@@ -12,24 +18,25 @@ public class GoldChest extends Item {
 		this.gold=100;
 	}
 
-	@Override
+	/**
+	 * See Item interface documentation
+	 */
 	public void isUsedBy(Player player) {
 		player.addGold(this.gold);
-		this.currentRoom().removeItem(this);
-		System.out.println("\t> "+AdventureGame.translator.translate("YouWin")+" "+this.gold+" "+AdventureGame.translator.translate("GoldCoins"));
+		player.currentRoom().removeItem(this);
+		System.out.println("\t> "+Translator.translate("YouWin")+" "+this.gold+" "+Translator.translate("GoldCoins"));
 	}
 
 	public String name() {
-		return AdventureGame.translator.translate("GoldChest");
+		return Translator.translate("GoldChest");
 	}
 
 	public String toString() {
-		return this.name()+" : "+this.gold+" "+AdventureGame.translator.translate("GoldCoins");
+		return this.name()+" : "+this.gold+" "+Translator.translate("GoldCoins");
 	}
 
-	@Override
 	public String description() {
-		return AdventureGame.translator.translate("GoldChest")+"\n\t["+AdventureGame.translator.translate("GoldChestDescription")+"]";
+		return Translator.translate("GoldChest")+"\n\t["+Translator.translate("GoldChestDescription")+"]";
 	}
 
 }

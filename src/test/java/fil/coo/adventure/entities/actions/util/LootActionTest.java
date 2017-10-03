@@ -20,7 +20,7 @@ public class LootActionTest extends ActionTest {
 	@Override
 	protected Room createValidRoom() {
 		Room r = new Room();
-		r.addDead(new Goblin());
+		r.addDead(new Goblin(15,5));
 		r.discovered();
 		return r;
 	}

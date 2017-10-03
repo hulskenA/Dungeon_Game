@@ -1,31 +1,42 @@
 
 package fil.coo.adventure.entities.monsters.util;
 
-
-
-import fil.coo.adventure.AdventureGame;
-import fil.coo.adventure.entities.GameCharacters;
+import fil.coo.adventure.entities.GameCharacter;
 import fil.coo.adventure.entities.monsters.SpecialMonsterAttack;
+import fil.coo.adventure.util.langages.Translator;
 
+/**
+ * This class represents the Goblin king monster :
+ * It is a special monster, in the sense of it's attack is different.
+ * It has a random chance of calling a goblin to the room when attacking.
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
 public class KingGoblin extends SpecialMonsterAttack {
-	public KingGoblin() {
-		super(30, 5);
+	public KingGoblin(int lp,int sp) {
+		super(lp, sp);
 	}
 	
 	@Override
 	public String name() {
-		return AdventureGame.translator.translate("KingGoblin");
+		return Translator.translate("KingGoblin");
 	}
 	
 	@Override
-	public void specialeffect(GameCharacters gm) {		
-		gm.currentRoom().addCharacter(new Goblin());
-		System.out.println(AdventureGame.translator.translate("KingGoblinEffect"));
+	/**
+	 * See SpecialMonster&SpecialMonsterAttack documentation
+	 */
+	public void onAttackEffect(GameCharacter gm) {		
+		gm.currentRoom().addCharacter(new Goblin(15,5));
+		System.out.println(Translator.translate("KingGoblinEffect"));
 	}
 
 	@Override
+	/**
+	 * See Lookable interface documentation
+	 */
 	public String description() {
-		return this.name()+"\n\t["+AdventureGame.translator.translate("KingGoblinDescription")+"]";
+		return this.name()+"\n\t["+Translator.translate("KingGoblinDescription")+"]";
 	}
 
 }

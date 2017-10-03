@@ -1,22 +1,21 @@
 package fil.coo.adventure.entities.monsters;
 
-import java.util.Random;
+/**
+ * A category of SpecialMonster that doesn't have a special onDieEffect but instead has
+ * only a particular onAttackEffect. It simply defines a empty behavior for the on-
+ * DieEffect method. However classes extending this one must provide a definit-
+ * ion for the onAttackEffect abstract method of SpecialMonster.
+ * @author VASILEV Martin, HULSKEN Alexandre
+ *
+ */
+public abstract class SpecialMonsterAttack extends SpecialMonster {
 
-import fil.coo.adventure.entities.GameCharacters;
-
-public abstract class SpecialMonsterAttack extends Monster {
-
-	public abstract void specialeffect(GameCharacters gm);
-	
 	public SpecialMonsterAttack(int lP, int st) {
 		super(lP, st);
 	}
-	
-	public void attack (GameCharacters theOtherCharacterToAttack) {
-		Random r = new Random();
-		if (r.nextBoolean())
-			this.specialeffect(theOtherCharacterToAttack);
-		super.attack(theOtherCharacterToAttack);
+
+	public final void onDieEffect() {
+		//Do nothing
+		return;
 	}
-	
 }
