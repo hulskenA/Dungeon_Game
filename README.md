@@ -29,7 +29,7 @@
     > + [3.1. Le package principal](#31-le-package-principal)
     > + [3.2. Le package "util"](#32-le-package-util)
     > + [3.3. Le package "places"](#33-le-package-places)
-    > + [3.4. Le package "entities"](#33-le-package-entities)
+    > + [3.4. Le package "entities"](#34-le-package-entities)
 
 4. [Conception des Objets](#4-conception-des-objets)
     > + [4.1. Notre code](#41-notre-code)
@@ -109,11 +109,11 @@ Ce procédé à pour but de vous rendre ce diagramme plus facile à lire pour en
 
 ![Le package util](http://www.plantuml.com/plantuml/png/dLHTQzim57tthxXqBmwRm_Om6CFDA2M1GEX2axUo1yM-JKHaoKZNtKV9Vz-LOyjo6rROYorVdVjnZexiZbBNmeeA2YMSko6oSjSGBWkZD_8FmiUa5iLHx16k7gMQ5iPCHVc4cXgBquQake9tYo-Bp_DFy9m0I4re7qM1i3BcA7OA8S-NVN0sQq40xw54LrXPapGwdS1Ns71ZlUVDKyAFTXXOIKUt1sCSsf3tx4YGB4vG73YULcuVaZ-09AmSV_l4V3lpTRV_aSS1jp1s9VIUYVkDdJ4AXUuBHZDk2g4rMgROZPWDhJQtDtTtytlVw8nANWvZKPIScch6i7IJy-iDr3_7EwT70wwP8eN3U2LZtMupxvH-ryW5t2LDlW7-8jIb2yVQYljaPDbtYmyhAnyEiYnH_yWYWHWq7YPh1bYKxejTWaIL6FA6BQUgauVz-VF0P3hgg9iAWdHvFkTljCBxCBWJO66xnLmdtUhwkbzbe4M5WsVxSDQl8dc5KdsprkQjcdra5We6pAZo9DGZSuwChqgdV7_IMokqKuAC3JmYCwxllwyvUMrDZPOakjSG_XKqn9YbVtCN5DK5IfolKw-kfzFD7PdX1PgweJ1bOmtCnZH66ShVpr71ZkN8OP4l1jwj5qz_0G00)
 
-##### 3.2 - Le package "places"
+##### 3.3 - Le package "places"
 
 ![Le package places](http://www.plantuml.com/plantuml/png/dLHDRzim3BtdLn3jnO6JO3iCA0OtmD2aGu6kA9R3peh4fK9iqv3aO5YN_pvA_cxJnTr5iiX7ylbHbDthl116P21JOUqNvupUbWxl9EKR_HlXmwGGSYzs21S_TRgGH0kX3fYxqk2YI8L4Um6NjrUtdzOVuNa2W7cPmKeRb4vJ3acoPWCQuK_B9UYiI37ZU0klyvMEJVT4Ux5DCMG3U0Zh9gphiFwOXEtwkjhda8iCuJDic7k-gutpQe_XsJgkBOyWKXJHb74jkJgyFKU3HDCw0HK5MUtmH6mC2gqqkWZHquv3vNHK7OUUesSMr8RlHDdx5Ra4-SGjamwDvSJtshhaApE_QQtB6gTGg9kHMFx3h8NSyQ5nvAXtJrig3Jk_YI9f9PW5_csyNMahwO065IEtHAnt8t5FfXUDYaEIg15Rg8vm91ax9Ek5F91MDTfWnWNV4R13r_b2MzvK971PiO2HLt4Saz5mvk6nOoZuLaI-EOpqtoSBdm5nEM_jbUiQ77Fdrh-q2xv-r-91Iq-urT3PgyUq7vfR4wd-sCp0NoFVyjSK7ybQpTUy1LTyD-YIbsF7w3SAJElq3PDcw8VwZfdUqFxExx6LltiXXhzmTjozpFKCnr1fVgu5__k-X5BpSlvdMQd1nd-yu_wLwR_Ya-DV)
 
-##### 3.3 - Le package "entities"
+##### 3.4 - Le package "entities"
 
 ![Le package entities](http://www.plantuml.com/plantuml/png/dLJHQjim57tFLmZouf8vR0-34KOXwzPkK5XO-ZRs8CitjeYiQoGve-lwxxkM5DTEd3RTGr1ohywHTCx9jLkfQsvunOJYrYwTCp9h77mJgDVo3x2tavgBBI-0RQIQ2yGvptUWNMDWJejq4YoRNd-uVl_b7NkOCCOpwmmNBX2o6rx1LSdR2XZBP5Khg0XeH_WQHwLRn2tF57WongPCDCRGXX-85LkmTecDMxc15SgMQy5eYMKw7dJXoa6nG9N7mYIM7lOtVMIbTCa5jNSey-DkWUwhT9_k4-uSQG66TWwVDS3E-jXSGdAwgud5jzSakov6u625aRMJgFlxuiRX9HAr2YzyGnA4RnTnOm7kIInFj5TcnYhSmHqc9cfxSDcU-1xNoUz9rr7g0qgUvrsdkygGby0tPCanq5UBKOoqIoLtGR0CKG7NiQFGGll0KwS5un9NmdVwc4wpErpwpdE6FhPgXool5BydzqCmKrRxdrUyvfbKuO-me51Qzt4fMiSkzpu5NABgpfzww0-zkwEXc54pC1oQmVLdzCyVd1AQ8qaxYlNizLa-aS3G7CylUMi56kYPwqLyUP3CAzJMpudfRxfyEmDU0IP0zNz8xfKSmPw1IPkVfSnpqB_I5ozt9cD-5kDUg-T9EqLJyyGQ0ad0cEYqIVzU7kI0vYH9S5gyTbWF1Zyv3MR31R3U26-5_0S0)
 
