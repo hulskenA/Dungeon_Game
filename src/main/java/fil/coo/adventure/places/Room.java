@@ -19,7 +19,7 @@ import fil.coo.adventure.util.langages.Translator;
  *
  */
 public class Room implements Lookable {
-	
+
 	protected List<GameCharacter> characters;
 	protected List<GameCharacter> deadCharacters;
 	protected List<Item> items;
@@ -139,6 +139,7 @@ public class Room implements Lookable {
 	 */
 	public void addNeighbour(Direction d, Room r) {
 		this.neighbour.put(d, r);
+		r.neighbour.put(d.opposite(), this);
 	}
 
 	/**
@@ -174,7 +175,7 @@ public class Room implements Lookable {
 	public String description() {
 		return this.description;
 	}
-	
+
 	/**
 	 * Returns a random character from the list of characters in the room
 	 * @return A game character selected at random
@@ -183,7 +184,7 @@ public class Room implements Lookable {
 		Random r = new Random();
 		return this.getCharacters().get(r.nextInt(this.getCharacters().size()));
 	}
-	
+
 	public String toString() {
 		return Translator.translate("RoomToString");
 	}

@@ -9,20 +9,8 @@ import fil.coo.adventure.util.ListChoser;
 import fil.coo.adventure.util.langages.Langages;
 import fil.coo.adventure.util.langages.Translator;
 import fil.coo.adventure.entities.actions.util.*;
-import fil.coo.adventure.entities.items.util.GoldChest;
-import fil.coo.adventure.entities.items.util.GoldPouch;
-import fil.coo.adventure.entities.items.util.LifePotion;
-import fil.coo.adventure.entities.items.util.OneArmedBandit;
-import fil.coo.adventure.entities.items.util.SleepedBadChest;
-import fil.coo.adventure.entities.items.util.StrengthPotion;
-import fil.coo.adventure.entities.monsters.util.Balrog;
-import fil.coo.adventure.entities.monsters.util.Dragon;
-import fil.coo.adventure.entities.monsters.util.KingGoblin;
-import fil.coo.adventure.entities.monsters.util.Kraken;
-import fil.coo.adventure.entities.monsters.util.Looter;
-import fil.coo.adventure.entities.monsters.util.Orc;
-import fil.coo.adventure.entities.monsters.util.Slime;
-import fil.coo.adventure.entities.monsters.util.ZombiesHord;
+import fil.coo.adventure.entities.items.util.*;
+import fil.coo.adventure.entities.monsters.util.*;
 
 /**
  * The main class of our game, the map for the game is created here.
@@ -30,7 +18,7 @@ import fil.coo.adventure.entities.monsters.util.ZombiesHord;
  *
  */
 public class Main {
-	
+
 	/**
 	 * The creation of the dungeon map.
 	 * @return the room in which the player should start
@@ -43,60 +31,101 @@ public class Main {
 		Room tmp2 = new Room();
 		tmp2.addDescription(Translator.translate("RoomDescription3"));
 		Exit exit = new Exit();
-		exit.addCharacter(new Dragon(100,25));
-		Direction dN = Direction.N;
+		exit.addDescription(Translator.translate("ExitToString"));
+		exit.addCharacter(new Dragon(100, 25));
 
-		room.addNeighbour(Direction.W, exit);
-		for (int i = 0; i < 3; i++)
-			room.addCharacter(new Slime(5,0));
-		room.addItem(new GoldChest());
-		room.addItem(new GoldPouch());
-		room.addNeighbour(dN, tmp1);
-		
-		tmp1.addNeighbour(dN.opposite(), room);
-		tmp1.addCharacter(new ZombiesHord(40,5));
-		tmp1.addItem(new LifePotion());
-		tmp1.addNeighbour(dN, tmp2);
-		
-		tmp2.addNeighbour(dN.opposite(), tmp1);
-		tmp2.addItem(new GoldChest());
-		tmp2.addItem(new SleepedBadChest());
+		room.addNeighbour(Direction.W, tmp1);
+		tmp1.addCharacter(new Slime(5, 0));
+
+		tmp1.addNeighbour(Direction.S, tmp2);
+		tmp2.addCharacter(new Slime(5, 0));
+		tmp2.addCharacter(new Goblin(15, 5));
+
+		Room tmp3 = new Room();
+		tmp3.addDescription(Translator.translate("RoomDescription4"));
+		tmp2.addNeighbour(Direction.W, tmp3);
+		for (int i = 0; i<3; i++)
+			tmp3.addCharacter(new Slime(5, 0));
+
+		tmp2 = new Room();
+		tmp2.addDescription(Translator.translate("RoomDescription5"));
+		tmp3.addNeighbour(Direction.W, tmp2);
 		tmp2.addItem(new LifePotion());
-		tmp2.addCharacter(new ZombiesHord(40,5));
+		tmp2.addCharacter(new Goblin(15, 5));
+		tmp2.addCharacter(new Goblin(15, 5));
+
+		tmp3 = new Room();
+		tmp3.addDescription(Translator.translate("RoomDescription6"));
+		tmp2.addNeighbour(Direction.N, tmp3);
+		tmp3.addItem(new OneArmedBandit());
+		tmp3.addCharacter(new KingGoblin(30, 5));
+
+		tmp2 = new Room();
+		tmp2.addDescription(Translator.translate("RoomDescription7"));
+		tmp1.addNeighbour(Direction.N, tmp2);
+		tmp2.addItem(new GoldPouch());
+
 		tmp1 = new Room();
-		tmp2.addNeighbour(dN, tmp1);
-		
-		tmp1.addNeighbour(dN.opposite(), tmp2);
-		tmp1.addItem(new StrengthPotion());
+		tmp1.addDescription(Translator.translate("RoomDescription8"));
+		tmp2.addNeighbour(Direction.N, tmp1);
+		tmp1.addCharacter(new Looter(20, 20));
 		tmp1.addItem(new OneArmedBandit());
-		tmp1.addCharacter(new Looter(20,20));
+
 		tmp2 = new Room();
-		tmp1.addNeighbour(dN, tmp2);
-		
-		tmp2.addNeighbour(dN.opposite(), tmp1);
-		for (int i = 0; i<2; i++)
-			tmp2.addItem(new LifePotion());
-		tmp1.addCharacter(new KingGoblin(30,5));
+		tmp2.addDescription(Translator.translate("RoomDescription9"));
+		tmp1.addNeighbour(Direction.W, tmp2);
+		tmp2.addCharacter(new ZombiesHord(35, 5));
+
+		tmp1 = new Room();
+		tmp1.addDescription(Translator.translate("RoomDescription1"));
+		tmp2.addNeighbour(Direction.W, tmp1);
+		tmp1.addItem(new StrengthPotion());
+		tmp1.addCharacter(new Balrog(80, 25));
+
+		tmp1.addNeighbour(Direction.N, exit);
+
+		Room tmp4 = new Room();
+		tmp4.addDescription(Translator.translate("RoomDescription2"));
+		tmp2.addNeighbour(Direction.S, tmp4);
+		tmp4.addCharacter(new Looter(20, 20));
+		tmp4.addItem(new LifePotion());
+
 		tmp2 = new Room();
-		tmp1.addNeighbour(dN, tmp2);
-		
-		tmp2.addNeighbour(dN.opposite(), tmp1);
-		for (int i = 0; i<4; i++)
-			tmp2.addItem(new StrengthPotion());
-		for (int i = 0; i<2; i++)
-			tmp2.addItem(new LifePotion());
-		tmp2.addCharacter(new Kraken(60,15));
-		tmp2.addCharacter(new Dragon(100,25));
-		tmp2.addCharacter(new Balrog(60,25));
-		tmp2.addCharacter(new Orc(40,10));
-		tmp2.addDead(new Orc(40,10));
-		
+		tmp2.addDescription(Translator.translate("RoomDescription3"));
+		tmp4.addNeighbour(Direction.W, tmp2);
+		tmp1. addNeighbour(Direction.S, tmp2);
+		tmp2.addCharacter(new Orc(40, 10));
+		tmp2.addCharacter(new Looter(20, 20));
+		tmp2.addDead(new Orc(0, 10));
+
+		tmp1 = new Room();
+		tmp1.addDescription(Translator.translate("RoomDescription4"));
+		tmp2.addNeighbour(Direction.W, tmp1);
+		tmp1.addItem(new GoldChest());
+		tmp1.addItem(new GoldChest());
+		tmp1.addItem(new SleepedBadChest());
+		tmp1.addCharacter(new KingGoblin(30, 5));
+
+		tmp1 = new Room();
+		tmp1.addDescription(Translator.translate("RoomDescription5"));
+		tmp1.addItem(new StrengthPotion());
+		tmp1.addItem(new LifePotion());
+		tmp2.addNeighbour(Direction.S, tmp1);
+		tmp3.addNeighbour(Direction.W, tmp1);
+
+		tmp1 = new Room();
+		tmp1.addDescription(Translator.translate("RoomDescription6"));
+		tmp1.addItem(new StrengthPotion());
+		tmp1.addCharacter(new Orc(40, 10));
+		tmp4.addNeighbour(Direction.E, tmp1);
+		tmp3.addNeighbour(Direction.E, tmp1);
+
 		return room;
 	}
-	
+
 	public static void main(String[] args) {
 		Translator.open(ListChoser.chose("Language:",Langages.allLangages(),true));
-		
+
 		Player thePlayer = new Player(100,10);
 		thePlayer.addCapability(new AttackAction());
 		thePlayer.addCapability(new LookAction());
@@ -109,5 +138,5 @@ public class Main {
 
 		Translator.close();
 	}
-	
+
 }
